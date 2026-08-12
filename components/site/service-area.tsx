@@ -1,5 +1,8 @@
-import { business, claims } from "@/lib/content";
+import Link from "next/link";
+
 import { Reveal } from "@/components/ui/reveal";
+import { areas } from "@/lib/areas";
+import { claims } from "@/lib/content";
 
 /**
  * Service area and credentials band. Sits directly under the hero rather than
@@ -15,12 +18,18 @@ export function ServiceArea() {
             <h2 className="shrink-0 text-[14px] font-semibold tracking-[-0.01em] text-ink">
               Where we work
             </h2>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
-              {business.serviceArea.map((place) => (
-                <li key={place} className="text-[15px] text-ink-muted">
-                  {place}
+            <ul className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+              {areas.map((area) => (
+                <li key={area.slug}>
+                  <Link
+                    href={`/areas/${area.slug}`}
+                    className="text-[15px] text-ink-muted underline decoration-transparent underline-offset-4 transition-colors duration-200 hover:text-ink hover:decoration-current"
+                  >
+                    {area.city}
+                  </Link>
                 </li>
               ))}
+              <li className="text-[15px] text-ink-muted">and the surrounding west GTA</li>
             </ul>
           </div>
         </Reveal>

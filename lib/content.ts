@@ -1,12 +1,15 @@
 /**
- * Every visible string on the site lives here.
+ * Every visible string that is not part of the services, projects, posts or
+ * areas data lives here.
  *
- * IMPORTANT before launch: the values in `business` and `claims` are
- * placeholders written to read like a real Hamilton area design-build firm.
- * The phone number, address, founding year, warranty term and insurance
- * status must be replaced with the real details, and every claim must be one
- * the business can actually stand behind.
+ * IMPORTANT before launch: the values in `business`, `claims`, `stats` and
+ * `testimonials` are placeholders written to read like a real Hamilton area
+ * design-build firm. The phone number, address, founding year, warranty term,
+ * insurance status and every number below must be replaced with real details,
+ * and every claim must be one the business can actually stand behind.
  */
+
+export const SITE_URL = "https://pureoasis.ca";
 
 export const business = {
   name: "Pure Oasis",
@@ -18,21 +21,20 @@ export const business = {
   email: "hello@pureoasis.ca",
   // TODO(client): replace with the real yard or office address.
   addressLines: ["1240 Rymal Road East, Unit 6", "Hamilton, ON L8W 3N7"],
+  streetAddress: "1240 Rymal Road East, Unit 6",
+  locality: "Hamilton",
+  region: "ON",
+  postalCode: "L8W 3N7",
   hours: [
     { days: "Monday to Friday", time: "7:00 to 17:00" },
     { days: "Saturday", time: "By appointment" },
+    { days: "Sunday", time: "Closed" },
   ],
-  serviceArea: [
-    "Hamilton",
-    "Burlington",
-    "Ancaster",
-    "Dundas",
-    "Waterdown",
-    "Oakville",
-    "Stoney Creek",
-    "Grimsby",
-    "Milton",
-    "Mississauga",
+  // TODO(client): point these at the real accounts, or delete the ones that do not exist.
+  social: [
+    { label: "Instagram", href: "https://instagram.com" },
+    { label: "Facebook", href: "https://facebook.com" },
+    { label: "LinkedIn", href: "https://linkedin.com" },
   ],
 } as const;
 
@@ -43,54 +45,76 @@ export const claims = [
   { label: "Workmanship warranty", value: "Three years, in writing" },
 ] as const;
 
+/** TODO(client): every one of these numbers needs to be a real number. */
+export const stats = [
+  { value: "412", label: "Gardens designed and built since 2009" },
+  { value: "68%", label: "Of last season's work came from referrals" },
+  { value: "9", label: "People on the build crew, no subcontracted labour" },
+  { value: "3 years", label: "Written workmanship warranty on every build" },
+] as const;
+
 export const nav = {
   links: [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services", hasChildren: true },
+    { label: "Projects", href: "/projects" },
+    { label: "Journal", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ],
   /** One label per intent. This exact string is the only contact CTA. */
-  cta: { label: "Book a consult", href: "#consult" },
+  cta: { label: "Book a consult", href: "/contact" },
 } as const;
 
 export const hero = {
   eyebrow: "Hamilton, Burlington and the west GTA",
   headline: "Stone, water and planting, built to last Ontario winters.",
   sub: "Full service landscape design and construction for homes across Hamilton, Burlington and the west GTA. One crew, start to finish.",
-  primary: { label: "Book a consult", href: "#consult" },
-  secondary: { label: "See our work", href: "#work" },
+  primary: { label: "Book a consult", href: "/contact" },
+  secondary: { label: "See our work", href: "/projects" },
 } as const;
 
-export const services = {
-  headline: "What we build.",
-  items: [
+export const about = {
+  teaserHeadline: "We build the part you never see with the same care as the part you do.",
+  teaserBody:
+    "Pure Oasis is a design and build practice, which means the person who draws your garden is accountable for what the crew puts in the ground. There is no handover to a stranger halfway through, and no quote that quietly reduces the base depth to win the job.",
+  teaserLink: { label: "About the practice", href: "/about" },
+
+  storyHeadline: "A drawing office and a build crew, under one roof.",
+  story: [
+    "Pure Oasis started in 2009 doing hard landscape for other people's drawings. We spent enough years correcting plans that could not be built to decide we should be doing both parts ourselves.",
+    "Today the practice runs a drawing office and a single build crew. Everything is designed in house and built by people on our own payroll, which is the only arrangement we have found where nobody can point at somebody else when a level is wrong.",
+    "We take on a limited number of builds each season for the same reason. Two crews would double the revenue and halve the supervision, and the supervision is the product.",
+  ],
+  values: [
     {
-      id: "design",
-      title: "Landscape design",
-      body: "A measured survey, a planting plan and a build drawing you can hand to any contractor for pricing. The drawings are yours whether or not we build them.",
+      title: "The base is not negotiable",
+      body: "Everything below the surface is specified for the soil on your property. It is the first thing a competing quote reduces and the last thing we will.",
     },
     {
-      id: "stone",
-      title: "Interlock and natural stone",
-      body: "Terraces, steps, retaining walls and driveways set on a full depth base, with the drainage worked out before the first cut.",
+      title: "One crew, one supervisor",
+      body: "The same people arrive each morning for the length of your build. No rotating subcontractors and no site left to run itself.",
     },
     {
-      id: "water",
-      title: "Pools, spas and water",
-      body: "Coping, decking and the grading that surrounds a pool. We lead the build or work to your pool contractor's schedule.",
+      title: "Drawings you own",
+      body: "Design work is priced and delivered as its own service. If you decide to build with someone else, you leave with everything you paid for.",
     },
     {
-      id: "planting",
-      title: "Planting and soil",
-      body: "Beds rebuilt from the soil up, with species chosen for the exposure they actually get on your property.",
-      points: ["Soil testing and amendment", "Native and adapted species", "Planting to the right season"],
+      title: "We say what things cost",
+      body: "Budget ranges are published on this site. A fixed price follows the survey and the drawings rather than the other way round.",
+    },
+  ],
+  team: [
+    {
+      name: "Renata Ilić",
+      role: "Design lead",
+      bio: "Trained in landscape architecture and spent nine years on residential work across the west GTA before joining Pure Oasis. Draws every plan that leaves the office.",
+      photo: "teamLead",
     },
     {
-      id: "systems",
-      title: "Lighting and irrigation",
-      body: "Low voltage lighting and zoned irrigation, sleeved and wired before the stone goes down.",
-      points: ["Low voltage LED", "Zoned drip and spray", "Autumn shutdown included"],
+      name: "Marcus Adeyemi",
+      role: "Site supervisor",
+      bio: "Runs the build crew and every site. Started in hard landscape at nineteen and has been setting stone in this region ever since.",
+      photo: "teamBuild",
     },
   ],
 } as const;
@@ -114,17 +138,6 @@ export const process = {
       title: "Handover",
       body: "A care sheet, an irrigation walkthrough, and a return visit the following spring to check how the planting took.",
     },
-  ],
-} as const;
-
-export const project = {
-  eyebrow: "Recent work",
-  title: "A sloped Ancaster lot, rebuilt as three level terraces.",
-  body: "The rear yard dropped almost three metres from the house to the fence line and shed water straight into the neighbour's garden. We regraded the slope, held it with two dry laid armour stone walls, and cut the usable ground into three terraces with a fire table on the middle level.",
-  facts: [
-    { label: "Location", value: "Ancaster, Ontario" },
-    { label: "Scope", value: "Regrading, armour stone, terraces, planting, lighting" },
-    { label: "Completed", value: "Autumn 2025" },
   ],
 } as const;
 
@@ -224,22 +237,13 @@ export const consult = {
   timelines: ["This season", "Next season", "Planning ahead"],
 } as const;
 
+export const closing = {
+  headline: "The best time to start is the season before you want to use it.",
+  body: "Design runs four to six weeks and builds are scheduled in order of booking. Starting a garden in autumn is how it is finished by the following June.",
+  cta: { label: "Book a consult", href: "/contact" },
+} as const;
+
 export const footer = {
   blurb:
-    "Landscape design and construction for homes in Hamilton, Burlington and the west GTA.",
-  columns: [
-    {
-      title: "Services",
-      links: services.items.map((s) => ({ label: s.title, href: "#services" })),
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "Work", href: "#work" },
-        { label: "Process", href: "#process" },
-        { label: "Pricing", href: "#pricing" },
-        { label: "Book a consult", href: "#consult" },
-      ],
-    },
-  ],
+    "Landscape design and construction for homes in Hamilton, Burlington and the west GTA. Designed in house, built by our own crew.",
 } as const;

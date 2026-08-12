@@ -3,27 +3,20 @@ import { EnvelopeSimple, Phone } from "@phosphor-icons/react/ssr";
 import { ConsultForm } from "@/components/site/consult-form";
 import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
-import { business, consult } from "@/lib/content";
+import { business } from "@/lib/content";
 
+/**
+ * The enquiry section. The heading lives on the page above it, so this is the
+ * form, the direct contact details and the opening hours only.
+ */
 export function Consult() {
   return (
     <section id="consult" className="border-b border-line">
-      <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 lg:py-28">
+      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
-              <h2 className="display max-w-[16ch] text-[2rem] sm:text-[2.5rem] lg:text-[3rem]">
-                {consult.headline}
-              </h2>
-              <p className="mt-6 max-w-[54ch] text-[16px] leading-relaxed text-ink-muted">
-                {consult.body}
-              </p>
-            </Reveal>
-
-            <Reveal index={1}>
-              <div className="mt-10">
-                <ConsultForm />
-              </div>
+              <ConsultForm />
             </Reveal>
           </div>
 
@@ -48,6 +41,7 @@ export function Consult() {
                   <EnvelopeSimple size={18} weight="light" aria-hidden />
                   {business.email}
                 </a>
+
                 <dl className="mt-2 flex flex-col gap-2">
                   {business.hours.map((entry) => (
                     <div key={entry.days} className="flex justify-between gap-6 text-[14px]">
@@ -56,6 +50,14 @@ export function Consult() {
                     </div>
                   ))}
                 </dl>
+
+                <address className="mt-4 border-t border-line pt-5 text-[14px] leading-relaxed text-ink-muted not-italic">
+                  {business.addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
               </div>
             </Reveal>
           </div>

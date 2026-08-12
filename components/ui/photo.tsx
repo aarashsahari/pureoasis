@@ -72,7 +72,7 @@ export function Photo({
 
   return (
     <div
-      className={`relative overflow-hidden bg-surface-2 ${bare ? "" : "rounded-edge border border-line"} ${size} ${className}`}
+      className={`@container relative overflow-hidden bg-surface-2 ${bare ? "" : "rounded-edge border border-line"} ${size} ${className}`}
       style={box}
       role="img"
       aria-label={photo.alt}
@@ -85,10 +85,22 @@ export function Photo({
             "linear-gradient(150deg, color-mix(in oklab, var(--accent) 12%, var(--surface-2)) 0%, var(--surface-2) 45%, color-mix(in oklab, var(--ink) 6%, var(--surface-2)) 100%)",
         }}
       />
-      <div className="absolute inset-0 flex flex-col justify-end gap-2 p-5 sm:p-6">
-        <Camera size={20} weight="light" className="text-ink-muted" aria-hidden />
-        <p className="text-[13px] leading-snug text-ink max-w-[38ch]">{photo.brief}</p>
-        <p className="font-mono text-[11px] text-ink-muted">
+      {/*
+        The reservation label scales with the box it is in, not the viewport.
+        A 96px footer thumbnail gets the camera mark alone; only a slot wide
+        enough to read carries the art direction and the filename.
+      */}
+      <div className="absolute inset-0 flex flex-col justify-end gap-2 p-3 @[260px]:p-5 @[420px]:p-6">
+        <Camera
+          size={20}
+          weight="light"
+          className="text-ink-muted @[260px]:mb-1"
+          aria-hidden
+        />
+        <p className="hidden max-w-[38ch] text-[13px] leading-snug text-ink @[260px]:block">
+          {photo.brief}
+        </p>
+        <p className="hidden font-mono text-[11px] text-ink-muted @[360px]:block">
           {photo.src} · {photo.width}x{photo.height}
         </p>
       </div>
