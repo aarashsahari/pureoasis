@@ -11,9 +11,9 @@ import { about } from "@/lib/content";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "About the Practice",
+  title: "About Pure Oasis",
   description:
-    "A landscape design and build practice in Hamilton. One drawing office, one build crew, no subcontracted labour, and drawings you own either way.",
+    "A full service landscape company in Hamilton. One crew that builds the property and then maintains it, which changes how the work gets built in the first place.",
   path: "/about",
 });
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <PageHeader
         crumbs={crumbs}
         title={about.storyHeadline}
-        lead="Design and construction under one roof, so nobody can point at somebody else when a level is wrong."
+        lead="Build and maintenance under one roof, so the people laying the stone are the people edging the sod against it next season."
       />
 
       <section aria-label="How the practice works" className="border-b border-line">
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 lg:py-28">
           <Reveal>
             <h2 className="display max-w-[16ch] text-[2rem] sm:text-[2.5rem] lg:text-[3rem]">
-              Who you will be working with.
+              Who you will be dealing with.
             </h2>
           </Reveal>
 

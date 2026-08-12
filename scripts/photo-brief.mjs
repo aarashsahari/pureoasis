@@ -11,7 +11,7 @@ const root = process.cwd();
 const source = readFileSync(join(root, "lib/photos.ts"), "utf8");
 
 const entryPattern =
-  /(\w+): \{\s*src: "([^"]+)",\s*alt:\s*\n?\s*"([^"]+)",\s*width: (\d+),\s*height: (\d+),\s*brief:\s*\n?\s*"([^"]+)",/g;
+  /(\w+): \{\s*src: "([^"]+)",\s*alt:\s*\n?\s*"([^"]+)",\s*width: (\d+),\s*height: (\d+),\s*brief:\s*\n?\s*"([^"]+)",(\s*have: true,)?/g;
 
 const entries = [...source.matchAll(entryPattern)];
 if (entries.length === 0) {
@@ -20,6 +20,9 @@ if (entries.length === 0) {
 }
 
 const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+
+const have = entries.filter((entry) => Boolean(entry[7]));
+const needed = entries.filter((entry) => !entry[7]);
 
 const lines = [
   "# Photography",
@@ -39,19 +42,34 @@ const lines = [
   "",
 ];
 
-for (const [, , src, , width, height, brief] of entries) {
-  const w = Number(width);
-  const h = Number(height);
-  const divisor = gcd(w, h);
-  lines.push(
-    `## \`${src.split("/").pop()}\``,
-    "",
-    `- Path: \`public${src}\``,
-    `- Size: ${w} x ${h}, ratio ${w / divisor}:${h / divisor}`,
-    `- Brief: ${brief}`,
-    ""
-  );
+function section(title, note, rows) {
+  lines.push(`# ${title}`, "", note, "");
+  for (const [, , src, , width, height, brief] of rows) {
+    const w = Number(width);
+    const h = Number(height);
+    const divisor = gcd(w, h);
+    lines.push(
+      `## \`${src.split("/").pop()}\``,
+      "",
+      `- Path: \`public${src}\``,
+      `- Size: ${w} x ${h}, ratio ${w / divisor}:${h / divisor}`,
+      `- Brief: ${brief}`,
+      ""
+    );
+  }
 }
+
+section(
+  `Photographs you already have (${have.length})`,
+  "These exist. They need exporting at the size below, under exactly these filenames.",
+  have
+);
+
+section(
+  `Still to shoot (${needed.length})`,
+  "Nothing here blocks launch. Each slot shows a labelled reservation of the right shape until the file arrives, so these can be filled in over a season of normal job photography.",
+  needed
+);
 
 writeFileSync(join(root, "public/images/README.md"), `${lines.join("\n")}`);
 console.log(`Wrote public/images/README.md for ${entries.length} slots.`);

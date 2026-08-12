@@ -11,7 +11,7 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Journal",
   description:
-    "Writing on how landscapes are built in southern Ontario: freeze and thaw, planting for real exposure, and where the money actually goes on a garden build.",
+    "Writing on how landscapes are built and kept in southern Ontario: freeze and thaw, why lawns thin out in August, and where the money actually goes on a build.",
   path: "/blog",
 });
 

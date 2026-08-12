@@ -47,7 +47,7 @@ export function Hero() {
         <div className="h-[32vh] min-h-[220px] lg:col-span-5 lg:mt-8 lg:h-[min(76vh,720px)]">
           <HeroEnter index={2} className="h-full">
             <Photo
-              slot="heroMain"
+              slot="patioSlabsPortrait"
               fill
               priority
               sizes="(min-width: 1024px) 40vw, 100vw"

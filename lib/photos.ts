@@ -6,8 +6,9 @@
  * either renders the real photograph or a labelled reservation block of the
  * exact same aspect ratio, so nothing shifts when the real files land.
  *
- * To go live: drop a file at `public/<src>` for each slot below. No code
- * change is needed. `brief` is the art direction for the shoot.
+ * `have: true` marks a slot where Pure Oasis already has the photograph and it
+ * only needs exporting to the filename below. Everything else still needs
+ * shooting or sourcing.
  *
  * Run `npm run photos` to regenerate `public/images/README.md` from this file.
  */
@@ -19,183 +20,227 @@ export type PhotoSlot = {
   alt: string;
   width: number;
   height: number;
-  /** Art direction for whoever shoots or sources the image. */
+  /** Art direction, or the crop instruction for a photograph that exists. */
   brief: string;
+  /** True when the photograph exists and only needs exporting. */
+  have?: boolean;
 };
 
 export const photos = {
-  heroMain: {
-    src: "/images/hero-terrace.jpg",
-    alt: "A limestone terrace and planted border at dusk behind a Burlington home, lit by low path lighting.",
+  // ---------------------------------------------------------------------
+  // Photographs Pure Oasis already has.
+  // ---------------------------------------------------------------------
+  patioSlabs: {
+    src: "/images/patio-slabs.jpg",
+    alt: "Large format concrete slabs set with black stone joints, meeting a strip of fresh sod along a cedar fence.",
+    width: 1600,
+    height: 1200,
+    brief:
+      "The slab patio with black stone joints and new sod against the cedar fence. Export at 1600px on the long edge, no crop needed.",
+    have: true,
+  },
+  patioSlabsPortrait: {
+    src: "/images/patio-slabs-portrait.jpg",
+    alt: "A slab patio with black stone joints running back towards a cedar fence.",
     width: 1400,
     height: 1750,
     brief:
-      "Home hero. Portrait crop of a finished backyard at blue hour. Terrace in the foreground, planting and a lit tree behind. No people, no furniture clutter.",
+      "Same slab patio photograph, cropped to a 4:5 portrait for the home page hero. Keep the run of slabs and the sod edge in frame, crop from the sides.",
+    have: true,
+  },
+  frontEntryStone: {
+    src: "/images/front-entry-stone.jpg",
+    alt: "A stamped concrete walkway with a black river rock inlay running beside a mulched bed of hostas and young shrubs.",
+    width: 1600,
+    height: 1200,
+    brief:
+      "The overhead of the stamped concrete entry with the black river rock inlay and the mulched bed. Export as shot.",
+    have: true,
+  },
+  frontLawnStriped: {
+    src: "/images/front-lawn-striped.jpg",
+    alt: "A freshly cut front lawn with mower stripes, edged mulch beds of hostas and flowering shrubs, and a stamped concrete walkway.",
+    width: 1600,
+    height: 1200,
+    brief: "The striped front lawn with the mulched beds and the walkway. Export as shot.",
+    have: true,
+  },
+  sideYardBefore: {
+    src: "/images/side-yard-before.jpg",
+    alt: "A narrow side yard before work, with patchy grass, timber raised beds and loose gravel against the fence.",
+    width: 1600,
+    height: 1200,
+    brief:
+      "Before frame of the side yard. Keep it exactly as shot, including the raised beds and the bare patches. Do not colour correct it to look better than it was.",
+    have: true,
+  },
+  sideYardAfter: {
+    src: "/images/side-yard-after.jpg",
+    alt: "The same side yard after work, with square stepping stones set in black stone and new sod laid up to the garage.",
+    width: 1600,
+    height: 1200,
+    brief:
+      "After frame of the side yard, shot from the matching end so the pair reads as the same place.",
+    have: true,
   },
 
+  // ---------------------------------------------------------------------
+  // Still needed.
+  // ---------------------------------------------------------------------
   serviceDesign: {
     src: "/images/service-design.jpg",
-    alt: "A landscape plan on a work table beside stone and paver samples.",
+    alt: "A landscape plan on a work table beside stone and mulch samples.",
     width: 1200,
     height: 900,
     brief:
-      "Design service. Overhead of a planting plan with material samples. Warm task light, tight crop, no branded product labels.",
+      "Design service. Overhead of a plan with material samples. Warm task light, tight crop, no branded product labels.",
   },
-  serviceStone: {
-    src: "/images/service-stone.jpg",
-    alt: "A crew setting a full-depth flagstone step onto a compacted base.",
-    width: 1000,
-    height: 1250,
-    brief:
-      "Stonework. Portrait crop, hands and a stone in motion, granular base visible. Real site, not a showroom.",
-  },
-  serviceWater: {
-    src: "/images/service-water.jpg",
-    alt: "A rectangular pool with a stone coping edge and a planted screen behind it.",
-    width: 1600,
+  serviceHardscape: {
+    src: "/images/service-hardscape.jpg",
+    alt: "A crew setting a slab onto a compacted base.",
+    width: 1200,
     height: 900,
     brief:
-      "Pools and water. Wide crop of a pool or water feature edge at the coping line. Calm surface, evening light.",
+      "Hardscape service. Hands and a slab or stone in motion, granular base visible. Take this on any build day, it is the most valuable photo on the site.",
   },
-  servicePlanting: {
-    src: "/images/service-planting.jpg",
-    alt: "A newly planted perennial border with amended soil visible at the edge.",
-    width: 1600,
+  serviceLawn: {
+    src: "/images/service-lawn.jpg",
+    alt: "A mower part way across a lawn, leaving a cut stripe behind it.",
+    width: 1200,
     height: 900,
     brief:
-      "Planting. A freshly planted bed photographed low, showing soil structure and spacing. Late spring.",
+      "Lawn care service. Mid cut, stripe visible behind the machine. Shoot low so the stripe reads.",
   },
-  serviceLighting: {
-    src: "/images/service-lighting.jpg",
-    alt: "Low path lights washing a stone stair and the planting beside it after dark.",
-    width: 1600,
+  serviceIrrigation: {
+    src: "/images/service-irrigation.jpg",
+    alt: "A pop up irrigation head running at the edge of a bed.",
+    width: 1200,
     height: 900,
     brief:
-      "Lighting and irrigation. After dark, low fixtures grazing a stair or wall. Warm, restrained, no light pollution.",
+      "Irrigation service. A head running, water visible, shot low against planting. Early morning light works best.",
+  },
+  serviceGarden: {
+    src: "/images/service-garden.jpg",
+    alt: "A freshly cut bed edge between black mulch and lawn.",
+    width: 1200,
+    height: 900,
+    brief:
+      "Garden maintenance service. Tight crop on a cut bed edge where mulch meets turf. This one detail sells the service.",
+  },
+
+  backyardCover: {
+    src: "/images/project-backyard.jpg",
+    alt: "A rebuilt rear yard with a slab patio and new sod behind a cedar fence.",
+    width: 2400,
+    height: 1080,
+    brief:
+      "Rear yard project, wide establishing shot from the house. If the slab patio job has a wider frame, use it here.",
+  },
+  frontEntryCover: {
+    src: "/images/project-front-entry.jpg",
+    alt: "A front entry with a stamped concrete walkway, stone inlay and planted beds.",
+    width: 2400,
+    height: 1080,
+    brief: "Front entry project, wide establishing shot from the street or driveway.",
+  },
+  sideYardDetail: {
+    src: "/images/side-yard-detail.jpg",
+    alt: "A stepping stone set into black stone beside new sod.",
+    width: 1200,
+    height: 900,
+    brief: "Side yard project detail. Close crop where the stepping stone meets the stone and the sod edge.",
+  },
+  backyardDetail: {
+    src: "/images/project-backyard-detail.jpg",
+    alt: "The joint line where a slab meets black stone and the sod edge.",
+    width: 1200,
+    height: 900,
+    brief: "Rear yard project detail. Tight crop on a joint or the sod edge. Proves the workmanship.",
+  },
+  frontEntryDetail: {
+    src: "/images/project-front-entry-detail.jpg",
+    alt: "An inground light set flush into the stamped concrete beside the stone inlay.",
+    width: 1200,
+    height: 900,
+    brief: "Front entry project detail. The inground light and the inlay edge, shot square on.",
   },
 
   aboutLead: {
     src: "/images/about-crew.jpg",
-    alt: "Two of the build crew setting out string lines across a stripped rear yard.",
+    alt: "Two of the crew setting out string lines across a stripped yard.",
     width: 1600,
     height: 1200,
-    brief:
-      "About lead. The crew at the setting out stage, string lines and a stripped yard. Documentary, not posed.",
+    brief: "About lead. The crew at the setting out stage. Documentary, not posed.",
   },
   aboutDetail: {
     src: "/images/about-detail.jpg",
-    alt: "A hand checking the level of a freshly laid paver against a string line.",
+    alt: "A hand checking the level of a freshly laid slab against a string line.",
     width: 900,
     height: 1200,
-    brief:
-      "About detail. Portrait crop of a level, a string line or a joint being checked. Close, tactile.",
+    brief: "About detail. Portrait crop of a level or a string line being checked. Close and tactile.",
   },
   aboutYard: {
     src: "/images/about-yard.jpg",
-    alt: "Pallets of stone and aggregate stacked at the company yard.",
+    alt: "Pallets of slabs and bagged stone stacked on a truck at the start of a job.",
     width: 1200,
     height: 900,
-    brief: "About supporting frame. The yard, pallets of stone, early morning. Wide enough to read as a place.",
+    brief: "About supporting frame. Materials on the truck or at the yard, early morning.",
   },
 
   teamLead: {
     src: "/images/team-lead.jpg",
-    alt: "The design lead standing at the drawing table.",
+    alt: "The owner of Pure Oasis on site.",
     width: 900,
     height: 1100,
     brief: "Team portrait. Natural light, plain background, shoulders up, no crossed arms.",
   },
   teamBuild: {
     src: "/images/team-build.jpg",
-    alt: "The site supervisor on a build in progress.",
+    alt: "The crew lead on a build in progress.",
     width: 900,
     height: 1100,
     brief: "Team portrait, matched to the other. Shot on site rather than in studio.",
   },
 
-  projectAncasterCover: {
-    src: "/images/project-ancaster.jpg",
-    alt: "A wide view of a rebuilt Ancaster backyard with a terrace, a fire table and a sloped lawn.",
-    width: 2400,
-    height: 1080,
-    brief:
-      "Ancaster project, establishing shot. Ultra wide, from the house looking out, late afternoon.",
-  },
-  projectAncasterDetail: {
-    src: "/images/project-ancaster-detail.jpg",
-    alt: "A close view of the terrace joint line where cut stone meets a planted bed.",
-    width: 1200,
-    height: 900,
-    brief: "Ancaster project detail. Tight crop on a joint, edge restraint or riser. Proves the workmanship.",
-  },
-  projectBurlingtonCover: {
-    src: "/images/project-burlington.jpg",
-    alt: "A Burlington pool surround in cut limestone with a planted screen along the fence line.",
-    width: 2400,
-    height: 1080,
-    brief: "Burlington project, establishing shot. Pool surround, wide, water calm, no swimmers.",
-  },
-  projectBurlingtonDetail: {
-    src: "/images/project-burlington-detail.jpg",
-    alt: "The coping edge where the limestone deck meets the water line.",
-    width: 1200,
-    height: 900,
-    brief: "Burlington project detail. The coping and waterline joint, shot close and square on.",
-  },
-  projectDundasCover: {
-    src: "/images/project-dundas.jpg",
-    alt: "A narrow Dundas garden with a rebuilt walkway and layered planting to both sides.",
-    width: 2400,
-    height: 1080,
-    brief: "Dundas project, establishing shot. Narrow lot, walkway leading the eye, overcast light is fine.",
-  },
-  projectDundasDetail: {
-    src: "/images/project-dundas-detail.jpg",
-    alt: "Layered planting pressing up against the edge of the new walkway.",
-    width: 1200,
-    height: 900,
-    brief: "Dundas project detail. Planting meeting hard edge, showing how tight the tolerance is.",
-  },
-
   postFreezeThaw: {
     src: "/images/post-freeze-thaw.jpg",
-    alt: "Frost heave lifting the corner of an older paver terrace.",
+    alt: "Frost heave lifting the corner of an older paver patio.",
     width: 1200,
     height: 800,
-    brief: "Blog cover. Evidence of frost heave on a tired terrace. Honest, slightly grim, well lit.",
+    brief: "Journal cover. Evidence of frost heave on a tired patio. Honest, slightly grim, well lit.",
   },
-  postNativePlanting: {
-    src: "/images/post-native-planting.jpg",
-    alt: "A native perennial border in late summer with seed heads left standing.",
+  postLawn: {
+    src: "/images/post-lawn.jpg",
+    alt: "A core aerator plug lying on a cut lawn.",
     width: 1200,
     height: 800,
-    brief: "Blog cover. Native planting late in the season, seed heads intact. Golden hour.",
+    brief: "Journal cover. Aeration plugs on turf, shot close. Shows the soil profile.",
   },
   postBudget: {
     src: "/images/post-budget.jpg",
     alt: "A marked up landscape plan with a measuring tape resting across it.",
     width: 1200,
     height: 800,
-    brief: "Blog cover. A plan with annotations and a tape. Suggests planning and cost without showing money.",
+    brief: "Journal cover. A plan with annotations and a tape. Planning and cost without showing money.",
   },
 
   ctaLead: {
     src: "/images/cta-lead.jpg",
-    alt: "An evening view across a finished terrace towards a lit house.",
+    alt: "An evening view across a finished patio towards a lit house.",
     width: 1200,
     height: 900,
     brief: "Closing band, main frame. Evening, looking back at the house from the garden.",
   },
   ctaSecond: {
     src: "/images/cta-second.jpg",
-    alt: "A stone stair descending through planting.",
+    alt: "A stepping stone path running through planting.",
     width: 800,
     height: 1000,
-    brief: "Closing band, second frame. Portrait, a stair or level change through planting.",
+    brief: "Closing band, second frame. Portrait, a path or level change through planting.",
   },
   ctaThird: {
     src: "/images/cta-third.jpg",
-    alt: "A fire table lit on a terrace after dark.",
+    alt: "An inground light washing a planted bed after dark.",
     width: 800,
     height: 800,
     brief: "Closing band, third frame. Square, a single warm focal point after dark.",
@@ -203,54 +248,16 @@ export const photos = {
 
   contactSide: {
     src: "/images/consult.jpg",
-    alt: "A designer walking a client through a rear yard with a tape measure and a site sketch.",
+    alt: "A walkthrough at the start of a job, with a tape measure and a site sketch.",
     width: 1200,
     height: 1500,
-    brief: "Consult section. Portrait crop of the first site visit. Candid, two people, sketchbook or tape in frame.",
-  },
-
-  footerOne: {
-    src: "/images/footer-1.jpg",
-    alt: "A cut stone edge against gravel.",
-    width: 600,
-    height: 600,
-    brief: "Footer thumbnail. Square material detail. These six should read as a set, same light and distance.",
-  },
-  footerTwo: {
-    src: "/images/footer-2.jpg",
-    alt: "A planted border along a limestone path.",
-    width: 600,
-    height: 600,
-    brief: "Footer thumbnail. Square, planting against hard landscape.",
-  },
-  footerThree: {
-    src: "/images/footer-3.jpg",
-    alt: "Water spilling over a stone lip.",
-    width: 600,
-    height: 600,
-    brief: "Footer thumbnail. Square, water detail.",
-  },
-  footerFour: {
-    src: "/images/footer-4.jpg",
-    alt: "A low light fixture set into a stone riser.",
-    width: 600,
-    height: 600,
-    brief: "Footer thumbnail. Square, a lighting fixture in context.",
-  },
-  footerFive: {
-    src: "/images/footer-5.jpg",
-    alt: "A dry laid armour stone wall.",
-    width: 600,
-    height: 600,
-    brief: "Footer thumbnail. Square, wall or retaining detail.",
-  },
-  footerSix: {
-    src: "/images/footer-6.jpg",
-    alt: "A terrace corner with furniture just visible at the edge of frame.",
-    width: 600,
-    height: 600,
-    brief: "Footer thumbnail. Square, a finished corner. Warmest of the six.",
+    brief: "Consult section. Portrait crop of the first site visit. Candid, sketchbook or tape in frame.",
   },
 } satisfies Record<string, PhotoSlot>;
 
 export type PhotoKey = keyof typeof photos;
+
+/** Slots the business already has a photograph for. */
+export const suppliedPhotos = (Object.keys(photos) as PhotoKey[]).filter(
+  (key) => "have" in photos[key] && photos[key].have
+);

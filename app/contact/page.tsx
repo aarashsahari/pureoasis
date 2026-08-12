@@ -7,9 +7,9 @@ import { SITE_URL, consult } from "@/lib/content";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Book a Consult",
+  title: "Get a Quote",
   description:
-    "Book a landscape design consult in Hamilton, Burlington, Ancaster, Dundas, Oakville or Stoney Creek. We answer within one business day and run walkthroughs Monday to Friday.",
+    "Get a quote for landscaping in Hamilton, Burlington, Ancaster, Dundas, Oakville or Stoney Creek. We answer within one business day and run site visits Monday to Friday.",
   path: "/contact",
 });
 

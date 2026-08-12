@@ -10,12 +10,12 @@ import { localBusinessSchema } from "@/lib/seo";
 import "./globals.css";
 
 const description =
-  "Landscape design and construction for homes in Hamilton, Burlington, Oakville and the west GTA. Terraces, natural stone, grading, planting, lighting and irrigation, built by one crew.";
+  "Full service landscaping for homes in Hamilton and the surrounding areas. Design, hardscape, lawn care, irrigation and garden maintenance, from one crew.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${business.name} | Landscape Design and Build, Hamilton and Burlington`,
+    default: `${business.name} | Full Service Landscaping, Hamilton`,
     template: `%s | ${business.name}`,
   },
   description,

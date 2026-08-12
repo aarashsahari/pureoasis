@@ -13,20 +13,19 @@ const logos = {
   LinkedIn: LinkedinLogo,
 } as const;
 
+/* The footer strip runs the four photographs the business already has. */
 const thumbnails: PhotoKey[] = [
-  "footerOne",
-  "footerTwo",
-  "footerThree",
-  "footerFour",
-  "footerFive",
-  "footerSix",
+  "patioSlabs",
+  "frontEntryStone",
+  "sideYardAfter",
+  "frontLawnStriped",
 ];
 
 const companyLinks = [
-  { label: "About the practice", href: "/about" },
+  { label: "About Pure Oasis", href: "/about" },
   { label: "Projects", href: "/projects" },
   { label: "Journal", href: "/blog" },
-  { label: "Book a consult", href: "/contact" },
+  { label: "Get a quote", href: "/contact" },
 ];
 
 export function SiteFooter() {
@@ -94,7 +93,7 @@ export function SiteFooter() {
           </nav>
 
           <nav aria-label="Company" className="lg:col-span-2">
-            <h2 className="text-[13px] font-semibold text-ink">Practice</h2>
+            <h2 className="text-[13px] font-semibold text-ink">Company</h2>
             <ul className="mt-4 flex flex-col gap-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -139,7 +138,7 @@ export function SiteFooter() {
 
         <div className="mt-16 border-t border-line pt-10">
           <div className="flex flex-wrap items-baseline justify-between gap-4">
-            <h2 className="text-[13px] font-semibold text-ink">From recent builds</h2>
+            <h2 className="text-[13px] font-semibold text-ink">From recent work</h2>
             <Link
               href="/projects"
               className="text-[13px] text-ink-muted underline underline-offset-4 transition-colors duration-200 hover:text-ink"
@@ -147,11 +146,11 @@ export function SiteFooter() {
               See the projects
             </Link>
           </div>
-          <ul className="mt-5 grid grid-cols-3 gap-2 sm:grid-cols-6">
+          <ul className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
             {thumbnails.map((slot) => (
               <li key={slot}>
                 <Link href="/projects" className="block">
-                  <Photo slot={slot} sizes="(min-width: 640px) 15vw, 30vw" />
+                  <Photo slot={slot} sizes="(min-width: 640px) 22vw, 45vw" />
                 </Link>
               </li>
             ))}
@@ -163,7 +162,7 @@ export function SiteFooter() {
             &copy; {year} {business.legalName}
           </p>
           <p className="text-[13px] text-ink-muted">
-            Serving Hamilton, Burlington, Ancaster and the west GTA.
+            Serving Hamilton and the surrounding areas.
           </p>
         </div>
       </div>

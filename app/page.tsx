@@ -1,4 +1,5 @@
 import { AboutTeaser } from "@/components/site/about-teaser";
+import { BeforeAfter } from "@/components/site/before-after";
 import { ClosingBand } from "@/components/site/closing-band";
 import { Durability } from "@/components/site/durability";
 import { FeaturedProject } from "@/components/site/featured-project";
@@ -15,9 +16,9 @@ import { pageMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/content";
 
 export const metadata = pageMetadata({
-  title: "Landscape Design and Build in Hamilton, Burlington and the West GTA",
+  title: "Landscaping in Hamilton and the Surrounding Areas",
   description:
-    "Pure Oasis designs and builds residential landscapes across Hamilton, Burlington and Oakville. Terraces, drainage, planting, lighting and pool surrounds, built by one crew.",
+    "Full service landscaping in Hamilton and the surrounding areas. Design, hardscape, lawn care, irrigation and garden maintenance, from one crew that builds it and keeps it.",
   path: "/",
 });
 
@@ -39,6 +40,7 @@ export default function HomePage() {
       <AboutTeaser />
       <Services />
       <StatsBand />
+      <BeforeAfter />
       <FeaturedProject />
       <Durability />
       <Process />

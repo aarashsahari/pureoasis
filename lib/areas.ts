@@ -25,12 +25,12 @@ export const areas: readonly Area[] = [
       "Above the escarpment the subsoil is generally heavy clay that holds water and moves with frost. Below it, closer to the bay, lots are more variable and often carry fill from earlier construction. Both need testing rather than assumption.",
     neighbourhoods: ["Durand", "Westdale", "Kirkendall", "Stoney Creek Mountain", "Rosedale"],
     typicalWork: [
-      "Rear garden rebuilds on narrow city lots",
-      "Retaining and level changes on escarpment properties",
-      "Front entries and driveway replacement",
+      "Rear yard rebuilds on narrow city lots",
+      "Front entries, walkways and steps",
+      "Weekly lawn and garden maintenance routes",
     ],
     metaDescription:
-      "Landscape design and construction across Hamilton, from downtown lots to escarpment properties. Terraces, grading, drainage, planting and lighting.",
+      "Full service landscaping across Hamilton, from downtown lots to escarpment properties. Patios, grading and drainage, planting, lawn care and maintenance.",
   },
   {
     slug: "burlington",
@@ -41,12 +41,12 @@ export const areas: readonly Area[] = [
       "Sandier soil closer to the lake drains faster and needs a different irrigation strategy than the clay further north. Wind off the water is a real constraint on exposed lots, particularly for broadleaf evergreens.",
     neighbourhoods: ["Roseland", "Shoreacres", "Aldershot", "Tyandaga", "Millcroft"],
     typicalWork: [
-      "Pool surrounds and deck regrading",
-      "Full rear garden builds",
+      "Full rear yard makeovers",
+      "Irrigation on larger, drier lots",
       "Screening and windbreak planting on exposed lots",
     ],
     metaDescription:
-      "Landscape design and build in Burlington. Pool surrounds, terraces, drainage and planting for lakeside and north Burlington properties.",
+      "Full service landscaping in Burlington. Patios, drainage, irrigation, planting and weekly lawn and garden maintenance for lakeside and north Burlington homes.",
   },
   {
     slug: "ancaster",
@@ -57,12 +57,12 @@ export const areas: readonly Area[] = [
       "Clay is common and slopes are common, which is the combination most likely to produce drainage problems at a property line. Retaining work here has to be engineered for saturated soil, not dry soil.",
     neighbourhoods: ["Ancaster Village", "Meadowlands", "Oakhill", "Sulphur Springs"],
     typicalWork: [
-      "Terracing and armour stone retaining",
+      "Terracing and retaining on sloped lots",
       "Regrading to resolve neighbour drainage",
-      "Estate scale planting programs",
+      "Whole property maintenance programmes",
     ],
     metaDescription:
-      "Landscape design and construction in Ancaster. Terracing, armour stone retaining and drainage for sloped properties on clay soil.",
+      "Full service landscaping in Ancaster. Terracing and retaining on sloped clay lots, drainage, planting and whole property maintenance programmes.",
   },
   {
     slug: "dundas",
@@ -73,12 +73,12 @@ export const areas: readonly Area[] = [
       "Valley properties sit lower and stay wetter, and many gardens back onto conservation land, which limits what can be planted and where water can be sent.",
     neighbourhoods: ["Dundas Driving Park", "Pleasant Valley", "University Gardens"],
     typicalWork: [
-      "Narrow lot gardens and walkways",
+      "Narrow lot yards, side yards and walkways",
       "Hand dug work where machine access is impossible",
-      "Planting to suit shaded valley conditions",
+      "Planting and maintenance for shaded valley gardens",
     ],
     metaDescription:
-      "Landscape design and build in Dundas. Narrow lot gardens, restricted access builds and planting suited to shaded valley conditions.",
+      "Full service landscaping in Dundas. Narrow lot yards, restricted access builds, and planting and maintenance suited to shaded valley conditions.",
   },
   {
     slug: "oakville",
@@ -89,12 +89,12 @@ export const areas: readonly Area[] = [
       "Mature tree cover on older streets is the dominant constraint. Root protection zones decide where a terrace can go long before aesthetics do.",
     neighbourhoods: ["Old Oakville", "Morrison", "Bronte", "Joshua Creek"],
     typicalWork: [
-      "Cut stone terraces and entries",
+      "Stone and stamped concrete entries",
       "Building around protected mature trees",
-      "Lighting and irrigation retrofits",
+      "Irrigation retrofits and seasonal service",
     ],
     metaDescription:
-      "Landscape design and construction in Oakville. Cut stone terraces, root sensitive builds around mature trees, lighting and irrigation.",
+      "Full service landscaping in Oakville. Stone and stamped concrete entries, root sensitive builds around mature trees, irrigation and maintenance.",
   },
   {
     slug: "stoney-creek",
@@ -105,12 +105,12 @@ export const areas: readonly Area[] = [
       "Newer subdivisions above the escarpment are often built on compacted fill with very little topsoil left. Rebuilding the soil profile is usually the first real task in the garden.",
     neighbourhoods: ["Winona", "Fifty Point", "Heritage Green", "Felker's Falls"],
     typicalWork: [
-      "Soil rebuilds on new subdivision lots",
-      "Rear garden builds from bare ground",
-      "Fencing, screening and windbreaks",
+      "Soil rebuilds and new sod on subdivision lots",
+      "Rear yard builds from bare ground",
+      "Irrigation installed before the lawn goes in",
     ],
     metaDescription:
-      "Landscape design and build in Stoney Creek. Soil rebuilds on new subdivision lots, rear garden construction, planting and screening.",
+      "Full service landscaping in Stoney Creek. Soil rebuilds and new sod on subdivision lots, rear yard construction, irrigation and maintenance.",
   },
 ];
 

@@ -14,9 +14,9 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
 
 export const metadata = pageMetadata({
-  title: "Landscape Services in Hamilton and Burlington",
+  title: "Landscaping Services in Hamilton",
   description:
-    "Design, interlock and natural stone, pool surrounds, planting, lighting and irrigation across Hamilton, Burlington and the west GTA, with published price ranges.",
+    "Design, hardscape, lawn care, irrigation and garden maintenance across Hamilton and the surrounding areas, with build ranges and seasonal rates published.",
   path: "/services",
 });
 
@@ -44,8 +44,8 @@ export default function ServicesPage() {
 
       <PageHeader
         crumbs={crumbs}
-        title="Five things we do, and one way we do them."
-        lead="Everything below is designed in house and built by our own crew. Most projects use several of these at once, which is the point of keeping them under one roof."
+        title="Five services, and one crew doing all of them."
+        lead="Two of these are builds priced by the job and three are programmes priced by the season. Most properties use both, which is the point of keeping them under one roof."
       />
 
       <section aria-label="Services" className="border-b border-line">

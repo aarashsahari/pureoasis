@@ -1,6 +1,6 @@
 # Photography
 
-30 photographic slots. Drop a file at each path below and it renders
+28 photographic slots. Drop a file at each path below and it renders
 automatically: `components/ui/photo.tsx` checks for the file at render time and
 otherwise shows a reservation block of the same aspect ratio, so nothing on the
 page shifts when the real images land.
@@ -13,59 +13,127 @@ something different from the brief.
 
 This file is generated. Run `npm run photos` after editing the manifest.
 
-## `hero-terrace.jpg`
+# Photographs you already have (6)
 
-- Path: `public/images/hero-terrace.jpg`
+These exist. They need exporting at the size below, under exactly these filenames.
+
+## `patio-slabs.jpg`
+
+- Path: `public/images/patio-slabs.jpg`
+- Size: 1600 x 1200, ratio 4:3
+- Brief: The slab patio with black stone joints and new sod against the cedar fence. Export at 1600px on the long edge, no crop needed.
+
+## `patio-slabs-portrait.jpg`
+
+- Path: `public/images/patio-slabs-portrait.jpg`
 - Size: 1400 x 1750, ratio 4:5
-- Brief: Home hero. Portrait crop of a finished backyard at blue hour. Terrace in the foreground, planting and a lit tree behind. No people, no furniture clutter.
+- Brief: Same slab patio photograph, cropped to a 4:5 portrait for the home page hero. Keep the run of slabs and the sod edge in frame, crop from the sides.
+
+## `front-entry-stone.jpg`
+
+- Path: `public/images/front-entry-stone.jpg`
+- Size: 1600 x 1200, ratio 4:3
+- Brief: The overhead of the stamped concrete entry with the black river rock inlay and the mulched bed. Export as shot.
+
+## `front-lawn-striped.jpg`
+
+- Path: `public/images/front-lawn-striped.jpg`
+- Size: 1600 x 1200, ratio 4:3
+- Brief: The striped front lawn with the mulched beds and the walkway. Export as shot.
+
+## `side-yard-before.jpg`
+
+- Path: `public/images/side-yard-before.jpg`
+- Size: 1600 x 1200, ratio 4:3
+- Brief: Before frame of the side yard. Keep it exactly as shot, including the raised beds and the bare patches. Do not colour correct it to look better than it was.
+
+## `side-yard-after.jpg`
+
+- Path: `public/images/side-yard-after.jpg`
+- Size: 1600 x 1200, ratio 4:3
+- Brief: After frame of the side yard, shot from the matching end so the pair reads as the same place.
+
+# Still to shoot (22)
+
+Nothing here blocks launch. Each slot shows a labelled reservation of the right shape until the file arrives, so these can be filled in over a season of normal job photography.
 
 ## `service-design.jpg`
 
 - Path: `public/images/service-design.jpg`
 - Size: 1200 x 900, ratio 4:3
-- Brief: Design service. Overhead of a planting plan with material samples. Warm task light, tight crop, no branded product labels.
+- Brief: Design service. Overhead of a plan with material samples. Warm task light, tight crop, no branded product labels.
 
-## `service-stone.jpg`
+## `service-hardscape.jpg`
 
-- Path: `public/images/service-stone.jpg`
-- Size: 1000 x 1250, ratio 4:5
-- Brief: Stonework. Portrait crop, hands and a stone in motion, granular base visible. Real site, not a showroom.
+- Path: `public/images/service-hardscape.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Hardscape service. Hands and a slab or stone in motion, granular base visible. Take this on any build day, it is the most valuable photo on the site.
 
-## `service-water.jpg`
+## `service-lawn.jpg`
 
-- Path: `public/images/service-water.jpg`
-- Size: 1600 x 900, ratio 16:9
-- Brief: Pools and water. Wide crop of a pool or water feature edge at the coping line. Calm surface, evening light.
+- Path: `public/images/service-lawn.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Lawn care service. Mid cut, stripe visible behind the machine. Shoot low so the stripe reads.
 
-## `service-planting.jpg`
+## `service-irrigation.jpg`
 
-- Path: `public/images/service-planting.jpg`
-- Size: 1600 x 900, ratio 16:9
-- Brief: Planting. A freshly planted bed photographed low, showing soil structure and spacing. Late spring.
+- Path: `public/images/service-irrigation.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Irrigation service. A head running, water visible, shot low against planting. Early morning light works best.
 
-## `service-lighting.jpg`
+## `service-garden.jpg`
 
-- Path: `public/images/service-lighting.jpg`
-- Size: 1600 x 900, ratio 16:9
-- Brief: Lighting and irrigation. After dark, low fixtures grazing a stair or wall. Warm, restrained, no light pollution.
+- Path: `public/images/service-garden.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Garden maintenance service. Tight crop on a cut bed edge where mulch meets turf. This one detail sells the service.
+
+## `project-backyard.jpg`
+
+- Path: `public/images/project-backyard.jpg`
+- Size: 2400 x 1080, ratio 20:9
+- Brief: Rear yard project, wide establishing shot from the house. If the slab patio job has a wider frame, use it here.
+
+## `project-front-entry.jpg`
+
+- Path: `public/images/project-front-entry.jpg`
+- Size: 2400 x 1080, ratio 20:9
+- Brief: Front entry project, wide establishing shot from the street or driveway.
+
+## `side-yard-detail.jpg`
+
+- Path: `public/images/side-yard-detail.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Side yard project detail. Close crop where the stepping stone meets the stone and the sod edge.
+
+## `project-backyard-detail.jpg`
+
+- Path: `public/images/project-backyard-detail.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Rear yard project detail. Tight crop on a joint or the sod edge. Proves the workmanship.
+
+## `project-front-entry-detail.jpg`
+
+- Path: `public/images/project-front-entry-detail.jpg`
+- Size: 1200 x 900, ratio 4:3
+- Brief: Front entry project detail. The inground light and the inlay edge, shot square on.
 
 ## `about-crew.jpg`
 
 - Path: `public/images/about-crew.jpg`
 - Size: 1600 x 1200, ratio 4:3
-- Brief: About lead. The crew at the setting out stage, string lines and a stripped yard. Documentary, not posed.
+- Brief: About lead. The crew at the setting out stage. Documentary, not posed.
 
 ## `about-detail.jpg`
 
 - Path: `public/images/about-detail.jpg`
 - Size: 900 x 1200, ratio 3:4
-- Brief: About detail. Portrait crop of a level, a string line or a joint being checked. Close, tactile.
+- Brief: About detail. Portrait crop of a level or a string line being checked. Close and tactile.
 
 ## `about-yard.jpg`
 
 - Path: `public/images/about-yard.jpg`
 - Size: 1200 x 900, ratio 4:3
-- Brief: About supporting frame. The yard, pallets of stone, early morning. Wide enough to read as a place.
+- Brief: About supporting frame. Materials on the truck or at the yard, early morning.
 
 ## `team-lead.jpg`
 
@@ -79,59 +147,23 @@ This file is generated. Run `npm run photos` after editing the manifest.
 - Size: 900 x 1100, ratio 9:11
 - Brief: Team portrait, matched to the other. Shot on site rather than in studio.
 
-## `project-ancaster.jpg`
-
-- Path: `public/images/project-ancaster.jpg`
-- Size: 2400 x 1080, ratio 20:9
-- Brief: Ancaster project, establishing shot. Ultra wide, from the house looking out, late afternoon.
-
-## `project-ancaster-detail.jpg`
-
-- Path: `public/images/project-ancaster-detail.jpg`
-- Size: 1200 x 900, ratio 4:3
-- Brief: Ancaster project detail. Tight crop on a joint, edge restraint or riser. Proves the workmanship.
-
-## `project-burlington.jpg`
-
-- Path: `public/images/project-burlington.jpg`
-- Size: 2400 x 1080, ratio 20:9
-- Brief: Burlington project, establishing shot. Pool surround, wide, water calm, no swimmers.
-
-## `project-burlington-detail.jpg`
-
-- Path: `public/images/project-burlington-detail.jpg`
-- Size: 1200 x 900, ratio 4:3
-- Brief: Burlington project detail. The coping and waterline joint, shot close and square on.
-
-## `project-dundas.jpg`
-
-- Path: `public/images/project-dundas.jpg`
-- Size: 2400 x 1080, ratio 20:9
-- Brief: Dundas project, establishing shot. Narrow lot, walkway leading the eye, overcast light is fine.
-
-## `project-dundas-detail.jpg`
-
-- Path: `public/images/project-dundas-detail.jpg`
-- Size: 1200 x 900, ratio 4:3
-- Brief: Dundas project detail. Planting meeting hard edge, showing how tight the tolerance is.
-
 ## `post-freeze-thaw.jpg`
 
 - Path: `public/images/post-freeze-thaw.jpg`
 - Size: 1200 x 800, ratio 3:2
-- Brief: Blog cover. Evidence of frost heave on a tired terrace. Honest, slightly grim, well lit.
+- Brief: Journal cover. Evidence of frost heave on a tired patio. Honest, slightly grim, well lit.
 
-## `post-native-planting.jpg`
+## `post-lawn.jpg`
 
-- Path: `public/images/post-native-planting.jpg`
+- Path: `public/images/post-lawn.jpg`
 - Size: 1200 x 800, ratio 3:2
-- Brief: Blog cover. Native planting late in the season, seed heads intact. Golden hour.
+- Brief: Journal cover. Aeration plugs on turf, shot close. Shows the soil profile.
 
 ## `post-budget.jpg`
 
 - Path: `public/images/post-budget.jpg`
 - Size: 1200 x 800, ratio 3:2
-- Brief: Blog cover. A plan with annotations and a tape. Suggests planning and cost without showing money.
+- Brief: Journal cover. A plan with annotations and a tape. Planning and cost without showing money.
 
 ## `cta-lead.jpg`
 
@@ -143,7 +175,7 @@ This file is generated. Run `npm run photos` after editing the manifest.
 
 - Path: `public/images/cta-second.jpg`
 - Size: 800 x 1000, ratio 4:5
-- Brief: Closing band, second frame. Portrait, a stair or level change through planting.
+- Brief: Closing band, second frame. Portrait, a path or level change through planting.
 
 ## `cta-third.jpg`
 
@@ -155,40 +187,4 @@ This file is generated. Run `npm run photos` after editing the manifest.
 
 - Path: `public/images/consult.jpg`
 - Size: 1200 x 1500, ratio 4:5
-- Brief: Consult section. Portrait crop of the first site visit. Candid, two people, sketchbook or tape in frame.
-
-## `footer-1.jpg`
-
-- Path: `public/images/footer-1.jpg`
-- Size: 600 x 600, ratio 1:1
-- Brief: Footer thumbnail. Square material detail. These six should read as a set, same light and distance.
-
-## `footer-2.jpg`
-
-- Path: `public/images/footer-2.jpg`
-- Size: 600 x 600, ratio 1:1
-- Brief: Footer thumbnail. Square, planting against hard landscape.
-
-## `footer-3.jpg`
-
-- Path: `public/images/footer-3.jpg`
-- Size: 600 x 600, ratio 1:1
-- Brief: Footer thumbnail. Square, water detail.
-
-## `footer-4.jpg`
-
-- Path: `public/images/footer-4.jpg`
-- Size: 600 x 600, ratio 1:1
-- Brief: Footer thumbnail. Square, a lighting fixture in context.
-
-## `footer-5.jpg`
-
-- Path: `public/images/footer-5.jpg`
-- Size: 600 x 600, ratio 1:1
-- Brief: Footer thumbnail. Square, wall or retaining detail.
-
-## `footer-6.jpg`
-
-- Path: `public/images/footer-6.jpg`
-- Size: 600 x 600, ratio 1:1
-- Brief: Footer thumbnail. Square, a finished corner. Warmest of the six.
+- Brief: Consult section. Portrait crop of the first site visit. Candid, sketchbook or tape in frame.

@@ -11,7 +11,7 @@ import { business, closing } from "@/lib/content";
  */
 export function ClosingBand() {
   return (
-    <section aria-label="Book a consult" className="border-b border-line bg-surface">
+    <section aria-label="Get a quote" className="border-b border-line bg-surface">
       <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 lg:py-28">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">

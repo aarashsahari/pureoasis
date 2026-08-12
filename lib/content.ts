@@ -3,8 +3,7 @@
  * areas data lives here.
  *
  * IMPORTANT before launch: the values in `business`, `claims`, `stats` and
- * `testimonials` are placeholders written to read like a real Hamilton area
- * design-build firm. The phone number, address, founding year, warranty term,
+ * `testimonials` are placeholders. The phone number, address, founding year,
  * insurance status and every number below must be replaced with real details,
  * and every claim must be one the business can actually stand behind.
  */
@@ -13,8 +12,8 @@ export const SITE_URL = "https://pureoasis.ca";
 
 export const business = {
   name: "Pure Oasis",
-  legalName: "Pure Oasis Landscape Design and Build",
-  tagline: "Landscape design and build",
+  legalName: "Pure Oasis Landscaping",
+  tagline: "Full service landscaping",
   // TODO(client): replace with the real published number.
   phone: "(905) 462-7318",
   phoneHref: "tel:+19054627318",
@@ -40,16 +39,16 @@ export const business = {
 
 /** TODO(client): confirm each of these before the site goes live. */
 export const claims = [
-  { label: "Building in the region since", value: "2009" },
+  { label: "Serving the region since", value: "2009" },
   { label: "Coverage", value: "Fully insured, WSIB covered" },
   { label: "Workmanship warranty", value: "Three years, in writing" },
 ] as const;
 
 /** TODO(client): every one of these numbers needs to be a real number. */
 export const stats = [
-  { value: "412", label: "Gardens designed and built since 2009" },
+  { value: "412", label: "Properties built or maintained since 2009" },
   { value: "68%", label: "Of last season's work came from referrals" },
-  { value: "9", label: "People on the build crew, no subcontracted labour" },
+  { value: "9", label: "People on the crew, no subcontracted labour" },
   { value: "3 years", label: "Written workmanship warranty on every build" },
 ] as const;
 
@@ -62,28 +61,28 @@ export const nav = {
     { label: "Contact", href: "/contact" },
   ],
   /** One label per intent. This exact string is the only contact CTA. */
-  cta: { label: "Book a consult", href: "/contact" },
+  cta: { label: "Get a quote", href: "/contact" },
 } as const;
 
 export const hero = {
-  eyebrow: "Hamilton, Burlington and the west GTA",
-  headline: "Stone, water and planting, built to last Ontario winters.",
-  sub: "Full service landscape design and construction for homes across Hamilton, Burlington and the west GTA. One crew, start to finish.",
-  primary: { label: "Book a consult", href: "/contact" },
+  eyebrow: "Hamilton and the surrounding areas",
+  headline: "Built properly, then kept that way.",
+  sub: "Full service landscaping for Hamilton and the surrounding areas. Design, hardscape, lawn care, irrigation and garden maintenance, from one crew.",
+  primary: { label: "Get a quote", href: "/contact" },
   secondary: { label: "See our work", href: "/projects" },
 } as const;
 
 export const about = {
-  teaserHeadline: "We build the part you never see with the same care as the part you do.",
+  teaserHeadline: "Most companies either build a yard or maintain one. We do both, which changes how we build.",
   teaserBody:
-    "Pure Oasis is a design and build practice, which means the person who draws your garden is accountable for what the crew puts in the ground. There is no handover to a stranger halfway through, and no quote that quietly reduces the base depth to win the job.",
-  teaserLink: { label: "About the practice", href: "/about" },
+    "Pure Oasis is a full service landscape company serving Hamilton and the surrounding areas. Because we are often the ones cutting the lawn and edging the beds two years later, we build things that are straightforward to keep. That is a different set of decisions than a crew who will never see the property again.",
+  teaserLink: { label: "About Pure Oasis", href: "/about" },
 
-  storyHeadline: "A drawing office and a build crew, under one roof.",
+  storyHeadline: "A landscape company that stays on the property.",
   story: [
-    "Pure Oasis started in 2009 doing hard landscape for other people's drawings. We spent enough years correcting plans that could not be built to decide we should be doing both parts ourselves.",
-    "Today the practice runs a drawing office and a single build crew. Everything is designed in house and built by people on our own payroll, which is the only arrangement we have found where nobody can point at somebody else when a level is wrong.",
-    "We take on a limited number of builds each season for the same reason. Two crews would double the revenue and halve the supervision, and the supervision is the product.",
+    "Pure Oasis Landscaping transforms outdoor spaces into landscapes that are worth looking at and easy to live with, and that hold their value. We work across design, hardscape, lawn care, irrigation and garden maintenance, which means most of our properties get built and then looked after by the same people.",
+    "That combination is the whole point. A patio is laid by the crew who will be edging the sod against it next season. Beds are planted at a spacing that can actually be maintained. Irrigation is sleeved during the build because we know what retrofitting one costs.",
+    "We take on a limited number of builds each season and keep the maintenance routes tight by area, so the schedule holds. Two crews would double the revenue and halve the supervision, and the supervision is the product.",
   ],
   values: [
     {
@@ -92,51 +91,51 @@ export const about = {
     },
     {
       title: "One crew, one supervisor",
-      body: "The same people arrive each morning for the length of your build. No rotating subcontractors and no site left to run itself.",
+      body: "The same people arrive each morning for the length of your build, and on the same day each week once you are on a maintenance route.",
     },
     {
-      title: "Drawings you own",
-      body: "Design work is priced and delivered as its own service. If you decide to build with someone else, you leave with everything you paid for.",
+      title: "Built to be maintained",
+      body: "Edges, spacing and access get decided with the maintenance visit in mind, because we are usually the ones coming back.",
     },
     {
       title: "We say what things cost",
-      body: "Budget ranges are published on this site. A fixed price follows the survey and the drawings rather than the other way round.",
+      body: "Build ranges and seasonal rates are published on this site. A fixed price follows the site visit rather than the other way round.",
     },
   ],
   team: [
     {
       name: "Renata Ilić",
-      role: "Design lead",
-      bio: "Trained in landscape architecture and spent nine years on residential work across the west GTA before joining Pure Oasis. Draws every plan that leaves the office.",
+      role: "Design and estimating",
+      bio: "Draws the plans and prices the work. Nine years on residential properties across the region before joining Pure Oasis.",
       photo: "teamLead",
     },
     {
       name: "Marcus Adeyemi",
-      role: "Site supervisor",
-      bio: "Runs the build crew and every site. Started in hard landscape at nineteen and has been setting stone in this region ever since.",
+      role: "Crew lead",
+      bio: "Runs the build crew and the maintenance routes. Started in hardscape at nineteen and has been setting stone in this region ever since.",
       photo: "teamBuild",
     },
   ],
 } as const;
 
 export const process = {
-  headline: "How a build runs.",
+  headline: "How a job runs.",
   steps: [
     {
-      title: "Walkthrough",
-      body: "We meet at the property, take measurements, and talk about budget in real numbers before anything is drawn.",
+      title: "Site visit",
+      body: "We walk the property, take measurements, and talk about budget in real numbers before anything is drawn or quoted.",
     },
     {
-      title: "Design",
-      body: "A concept plan, material selections and a fixed price. Two rounds of revisions are included.",
+      title: "Quote or plan",
+      body: "Maintenance gets a seasonal rate. Builds get a layout, material selections and a fixed price with two rounds of revisions.",
     },
     {
-      title: "Build",
-      body: "One crew and one site supervisor for the whole job, working to a schedule you can hold us to.",
+      title: "The work",
+      body: "One crew and one supervisor for the whole job, working to a schedule you can hold us to.",
     },
     {
-      title: "Handover",
-      body: "A care sheet, an irrigation walkthrough, and a return visit the following spring to check how the planting took.",
+      title: "After",
+      body: "A care sheet on handover, and the option to stay on a weekly or fortnightly programme so it keeps looking the way it did on day one.",
     },
   ],
 } as const;
@@ -152,11 +151,11 @@ export const durability = {
     },
     {
       title: "Drainage",
-      body: "Water has to leave the property on purpose. Grading, drains and sleeved lines are planned at design stage, not solved after the stone is down.",
+      body: "Water has to leave the property on purpose. Falls, drains and open joints are planned at the start, not solved after the stone is down.",
     },
     {
       title: "Edge restraint",
-      body: "Pavers spread from the edges inward. Proper restraint and full depth cuts at every border are the reason a terrace still lines up in year ten.",
+      body: "Paving spreads from the edges inward. Proper restraint and full depth cuts at every border are the reason a patio still lines up in year ten.",
     },
   ],
 } as const;
@@ -166,19 +165,19 @@ export const testimonials = {
   items: [
     {
       quote:
-        "They found a drainage problem the previous contractor had buried. Four winters on, the terrace has not moved.",
+        "They found a drainage problem the previous contractor had buried. Four winters on, the patio has not moved.",
       name: "Marisol Trần",
       place: "Ancaster",
     },
     {
       quote:
-        "The drawings were detailed enough to price against two other builders. Pure Oasis still won the job.",
+        "Same crew every week, same day, and the beds get edged without us having to ask.",
       name: "Devin Okonkwo",
       place: "Burlington",
     },
     {
       quote:
-        "Same crew every morning for six weeks, and the driveway was swept before they left each night.",
+        "The side yard went from the worst part of the property to the way we walk into the garden.",
       name: "Hannah Beaudoin",
       place: "Dundas",
     },
@@ -186,64 +185,87 @@ export const testimonials = {
 } as const;
 
 export const pricing = {
-  headline: "What projects cost here.",
-  note: "Ranges are indicative. A fixed price follows the walkthrough and the drawings.",
+  headline: "What it costs here.",
+  note: "Ranges are indicative. A fixed price follows the site visit.",
+  buildsHeading: "Builds, priced by the job",
+  seasonalHeading: "Maintenance, priced by the season",
   tiers: [
     {
-      title: "Garden and entry refresh",
-      range: "$18,000 to $45,000",
-      body: "Front beds, a rebuilt walkway, path lighting and a planting plan for the whole frontage.",
-      includes: ["Planting plan", "Walkway or landing", "Path lighting"],
+      title: "Walkway, entry or small patio",
+      range: "$6,000 to $18,000",
+      body: "A single surface done properly. Excavation, base, edge restraint and the sod or planting that finishes it.",
+      includes: ["Excavation and base", "Paving or slabs", "Edging and sod repair"],
     },
     {
-      title: "Full backyard build",
-      range: "$60,000 to $180,000",
-      body: "Terrace, grading, drainage, planting and lighting delivered as one build rather than in stages.",
+      title: "Full yard makeover",
+      range: "$25,000 to $90,000",
+      body: "Grading, drainage, hardscape, planting and sod delivered as one build rather than in stages.",
       includes: [
         "Grading and drainage",
-        "Terrace and steps",
-        "Planting and irrigation",
-        "Lighting",
+        "Patio, walkway and steps",
+        "Beds, planting and sod",
+        "Irrigation sleeving",
       ],
       featured: true,
     },
     {
-      title: "Estate grounds",
-      range: "$200,000 and up",
-      body: "Multi season programs across a whole property, including pool surrounds, structures and full irrigation.",
-      includes: ["Multi phase schedule", "Pool surrounds", "Structures", "Full irrigation"],
+      title: "Whole property programme",
+      range: "$100,000 and up",
+      body: "Front and rear rebuilt together, phased across seasons, with irrigation and lighting run through the whole property.",
+      includes: ["Multi phase schedule", "Front and rear", "Full irrigation", "Lighting"],
+    },
+  ],
+  seasonal: [
+    {
+      title: "Lawn care",
+      range: "From $55 per visit",
+      body: "Weekly cutting, trimming and blow down, on a fixed day by area.",
+      includes: ["Weekly cut and trim", "Fertiliser programme", "Spring and autumn cleanup"],
+    },
+    {
+      title: "Lawn and garden",
+      range: "From $95 per visit",
+      body: "Everything in lawn care, plus the beds edged, weeded and kept in shape through the season.",
+      includes: ["All of lawn care", "Bed edging and weeding", "Pruning and shaping", "Mulch top up"],
+      featured: true,
+    },
+    {
+      title: "Full property care",
+      range: "Quoted per property",
+      body: "Lawn, beds, irrigation start up and blowout, and seasonal planting, on one schedule and one invoice.",
+      includes: ["All of lawn and garden", "Irrigation service", "Seasonal planting", "Priority scheduling"],
     },
   ],
 } as const;
 
 export const consult = {
   headline: "Tell us about the property.",
-  body: "We answer within one business day and book walkthroughs Monday to Friday. Design work for the coming season is usually booked out by March.",
+  body: "We answer within one business day and book site visits Monday to Friday. Maintenance routes fill by April and build work is scheduled in order of booking.",
   projectTypes: [
-    "Full backyard build",
-    "Terrace, steps or walls",
-    "Front entry and planting",
-    "Pool surround",
-    "Lighting or irrigation",
+    "Weekly lawn care",
+    "Garden maintenance",
+    "Patio, walkway or steps",
+    "Full yard makeover",
+    "Irrigation",
     "Not sure yet",
   ],
   budgets: [
-    "Under $25,000",
+    "Maintenance, not a build",
+    "Under $10,000",
+    "$10,000 to $25,000",
     "$25,000 to $60,000",
-    "$60,000 to $120,000",
-    "$120,000 to $250,000",
-    "Over $250,000",
+    "Over $60,000",
   ],
   timelines: ["This season", "Next season", "Planning ahead"],
 } as const;
 
 export const closing = {
   headline: "The best time to start is the season before you want to use it.",
-  body: "Design runs four to six weeks and builds are scheduled in order of booking. Starting a garden in autumn is how it is finished by the following June.",
-  cta: { label: "Book a consult", href: "/contact" },
+  body: "Build work is scheduled in order of booking and maintenance routes fill by April. Starting in autumn is how a yard is finished by the following June.",
+  cta: { label: "Get a quote", href: "/contact" },
 } as const;
 
 export const footer = {
   blurb:
-    "Landscape design and construction for homes in Hamilton, Burlington and the west GTA. Designed in house, built by our own crew.",
+    "Full service landscaping for Hamilton and the surrounding areas. Design, hardscape, lawn care, irrigation and garden maintenance, from one crew.",
 } as const;

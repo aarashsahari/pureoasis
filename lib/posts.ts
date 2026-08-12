@@ -70,47 +70,54 @@ export const posts: readonly Post[] = [
       "Freeze and thaw damages the base, the drainage and the edges rather than the stone. What causes patio failure in the Hamilton area, and what to ask before signing.",
   },
   {
-    slug: "planting-for-southern-ontario-exposure",
-    title: "Planting for the exposure you have, not the one on the label",
+    slug: "why-lawns-thin-out-every-august",
+    title: "Why your lawn thins out every August, and what actually fixes it",
     excerpt:
-      "Two gardens ten minutes apart can be different growing environments. Reading your own site is worth more than any plant list.",
+      "Reseeding the same bare patch every spring treats the symptom. In this region the cause is almost always underneath the grass.",
     published: "2026-04-22",
-    author: "Renata Ilić",
-    authorRole: "Design lead",
+    author: "Marcus Adeyemi",
+    authorRole: "Crew lead",
     readingMinutes: 5,
-    cover: "postNativePlanting",
-    metaTitle: "Planting for Your Real Garden Exposure",
+    cover: "postLawn",
+    metaTitle: "Why Lawns Thin Out Every August",
     body: [
       {
         paragraphs: [
-          "Plant tags describe conditions in general terms. Full sun, part shade, moist but well drained. None of that accounts for a south facing brick wall that radiates heat until midnight, or a north side that never dries out because the neighbour's maple takes the light and the roof takes the rain.",
-          "Before choosing anything, it is worth spending a season noticing what your garden actually does.",
+          "A lawn that looks good in May and thin by the middle of August is following a pattern, not having bad luck. The grass has not failed. The ground it is growing in has stopped being able to support it once the weather gets hard.",
+          "Overseeding the same patch each spring is treating what you can see. The reason it comes back is a few inches lower.",
         ],
       },
       {
-        heading: "Light changes through the day and the year",
+        heading: "Compaction is the usual culprit",
         paragraphs: [
-          "A bed that gets six hours in July may get ninety minutes in October once the sun sits lower and the fence throws a longer shadow. Walk the garden at three or four points in a day and note where the light lands, then do it again in a different season.",
-          "Most disappointing planting in this region is a light problem, not a plant problem.",
+          "Clay compacts, and most of this region is clay. Compacted soil has very little pore space, which means roots stay shallow and water runs off instead of soaking in. A shallow rooted lawn has no reserve when three hot weeks arrive.",
+          "Core aeration pulls plugs out and gives the soil somewhere to expand into. Done once a year, usually in early autumn, it does more for a struggling lawn than any amount of seed.",
         ],
       },
       {
-        heading: "Wind and salt are real constraints",
+        heading: "Cutting height matters more than people expect",
         paragraphs: [
-          "Exposed lots on the escarpment take wind that will dry out broadleaf evergreens by February. Anything within a few metres of a road or a salted walkway is in a different chemical environment than the rest of the garden.",
-          "These are solvable conditions once acknowledged. They are not solvable by choosing a plant that likes the idea of the site.",
+          "Grass cut short in July is grass with no shade over its own roots. The soil surface heats, moisture leaves, and the plant spends its energy regrowing leaf instead of pushing roots down.",
+          "Raising the deck for the summer months keeps the ground cooler and the colour better, and it costs nothing.",
         ],
       },
       {
-        heading: "Natives, but for the right reason",
+        heading: "Feeding on a schedule, not a whim",
         paragraphs: [
-          "Native species tend to perform because they evolved in these conditions, not because of the label. A mixed list of natives and well adapted introductions usually gives a longer season of interest and a more resilient garden than a purist approach in either direction.",
-          "The test is the same for every plant. Does it want what this specific piece of ground is offering.",
+          "A lawn needs different things in April than it does in September. Early feeding pushes top growth, late season feeding builds the root reserve that carries it through the following summer.",
+          "The autumn application is the one most homeowners skip and the one that changes next August.",
+        ],
+      },
+      {
+        heading: "When the answer really is new sod",
+        paragraphs: [
+          "Sometimes the soil profile is gone, usually on newer subdivision lots where construction stripped the topsoil and left compacted fill. No feeding programme fixes that.",
+          "In that case the honest recommendation is to strip, bring in screened topsoil, grade properly and lay new sod, and then maintain it so the same thing does not happen again.",
         ],
       },
     ],
     metaDescription:
-      "How to read light, wind and soil on your own property before choosing plants, and why two southern Ontario gardens ten minutes apart can need different lists.",
+      "Thin summer lawns in the Hamilton area are usually a compaction problem, not a seed problem. Aeration, cutting height, feeding schedule and when new sod is the real answer.",
   },
   {
     slug: "what-a-landscape-build-actually-costs",

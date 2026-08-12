@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Params) {
   if (!area) return {};
 
   return pageMetadata({
-    title: `Landscape Design and Build in ${area.city}`,
+    title: `Landscaping in ${area.city}`,
     description: area.metaDescription,
     path: `/areas/${area.slug}`,
   });
@@ -48,7 +48,7 @@ export default async function AreaPage({ params }: Params) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `Landscape design and build in ${area.city}`,
+    name: `Landscaping in ${area.city}`,
     description: area.metaDescription,
     url: `${SITE_URL}/areas/${area.slug}`,
     provider: { "@id": `${SITE_URL}/#business` },
@@ -64,7 +64,7 @@ export default async function AreaPage({ params }: Params) {
           { name: "Home", path: "/" },
           { name: area.city, path: `/areas/${area.slug}` },
         ]}
-        title={`Landscape design and build in ${area.city}.`}
+        title={`Full service landscaping in ${area.city}.`}
         lead={area.intro}
       />
 
@@ -72,7 +72,7 @@ export default async function AreaPage({ params }: Params) {
         <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 lg:py-24">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
             <Reveal className="lg:col-span-6">
-              <Photo slot="heroMain" sizes="(min-width: 1024px) 46vw, 100vw" />
+              <Photo slot="patioSlabs" sizes="(min-width: 1024px) 46vw, 100vw" />
             </Reveal>
 
             <div className="lg:col-span-5 lg:col-start-8 lg:self-center">
@@ -109,7 +109,7 @@ export default async function AreaPage({ params }: Params) {
         <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 lg:py-24">
           <Reveal>
             <h2 className="display max-w-[20ch] text-[1.8rem] sm:text-[2.2rem]">
-              What we build in {area.city}.
+              What we do in {area.city}.
             </h2>
           </Reveal>
 

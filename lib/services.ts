@@ -3,11 +3,13 @@ import type { PhotoKey } from "@/lib/photos";
 export type Service = {
   slug: string;
   title: string;
-  /** One line for the services grid. */
+  /** How the service is described in a sentence, used across the grids. */
   summary: string;
   /** Opening paragraph on the service page. */
   intro: string;
   photo: PhotoKey;
+  /** Recurring services are sold by the season, builds are sold by the job. */
+  billing: "project" | "seasonal";
   includes: readonly string[];
   detail: readonly { title: string; body: string }[];
   faqs: readonly { question: string; answer: string }[];
@@ -20,16 +22,17 @@ export const services: readonly Service[] = [
     slug: "landscape-design",
     title: "Landscape design",
     summary:
-      "A measured survey, a planting plan and a build drawing you can hand to any contractor for pricing.",
+      "A measured plan for the whole property, drawn so it can be priced, phased and actually built.",
     intro:
       "Design comes first and stands on its own. We survey the property, work out what the ground is doing, and draw a plan detailed enough to build from. The drawings are yours whether or not we build them.",
     photo: "serviceDesign",
+    billing: "project",
     includes: [
       "Measured site survey",
       "Grading and drainage strategy",
-      "Concept plan and materials board",
+      "Layout and materials board",
       "Planting plan by exposure",
-      "Construction drawings for pricing",
+      "Drawings you can price against",
     ],
     detail: [
       {
@@ -38,11 +41,11 @@ export const services: readonly Service[] = [
       },
       {
         title: "The plan is priceable",
-        body: "A concept sketch is not a plan. What you receive includes sections, materials, quantities and levels, so any competent builder in the region can quote it line by line.",
+        body: "A concept sketch is not a plan. What you receive includes layout, materials, quantities and levels, so any competent builder in the region can quote it line by line.",
       },
       {
-        title: "Two rounds of revisions",
-        body: "Changes are expected. Two rounds are included in the design fee, and we would rather move a terrace on paper than after it is built.",
+        title: "Built in phases if that suits the budget",
+        body: "Plenty of properties get built over two or three seasons. Designing the whole thing first is what keeps phase two from tearing up phase one.",
       },
     ],
     faqs: [
@@ -52,197 +55,204 @@ export const services: readonly Service[] = [
           "Yes. The drawings are yours. Some clients build with their own crew, some phase the work over several years, and some come back to us later.",
       },
       {
-        question: "How long does design take?",
+        question: "Do we need a design for a small job?",
         answer:
-          "Four to six weeks from survey to final drawings for a typical residential property, longer if a pool or a permit is involved.",
+          "Not always. A single walkway or a bed refresh can be quoted from a site visit. Anything that changes grade, drainage or the layout of the whole yard is worth drawing first.",
       },
     ],
-    metaTitle: "Landscape Design in Hamilton and Burlington",
+    metaTitle: "Landscape Design in Hamilton",
     metaDescription:
-      "Measured surveys, grading and drainage strategy, planting plans and construction drawings for homes in Hamilton, Burlington and the west GTA.",
+      "Measured surveys, grading and drainage strategy, layouts and planting plans for homes in Hamilton and the surrounding areas. Drawings you can price and build from.",
   },
   {
-    slug: "interlock-and-natural-stone",
-    title: "Interlock and natural stone",
+    slug: "hardscape-and-interlock",
+    title: "Hardscape and interlock",
     summary:
-      "Terraces, steps, retaining walls and driveways set on a full depth base, with drainage worked out first.",
+      "Patios, walkways, steps and retaining, set on a full depth base with the drainage worked out first.",
     intro:
-      "Hard landscape is where local work usually fails, and it almost always fails underneath. We build the base for the soil that is actually there, and we take drainage as seriously as the surface you can see.",
-    photo: "serviceStone",
+      "Hardscape is where local work usually fails, and it almost always fails underneath. We build the base for the soil that is actually there, and we take drainage as seriously as the surface you can see.",
+    photo: "serviceHardscape",
+    billing: "project",
     includes: [
-      "Terraces and patios",
-      "Steps, risers and landings",
-      "Retaining and armour stone walls",
-      "Driveways and entries",
-      "Edge restraint and full depth cuts",
+      "Patios and slab terraces",
+      "Walkways, steps and landings",
+      "Interlock driveways and entries",
+      "Retaining and armour stone",
+      "Decorative stone and edging",
     ],
     detail: [
       {
         title: "Base depth follows the soil",
-        body: "Clay holds water and moves more than sand. We test what is under the topsoil and build the base to suit it, which across most of Hamilton means more depth than a quoted average.",
+        body: "Clay holds water and moves more than sand. We check what is under the topsoil and build the base to suit it, which across most of Hamilton means more depth than a quoted average.",
       },
       {
         title: "Water leaves on purpose",
-        body: "Falls, drains and sleeving are set out at design stage. Nothing gets solved after the stone is down, because by then the only fix is lifting it.",
+        body: "Falls, drains and sleeving are set out before anything is laid. Nothing gets solved after the stone is down, because by then the only fix is lifting it.",
       },
       {
-        title: "Edges are the tell",
-        body: "Pavers spread from the edges inward. Proper restraint and full depth cuts at every border are why a terrace still lines up in year ten.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Natural stone or manufactured pavers?",
-        answer:
-          "Both work here. Manufactured units are dimensionally consistent and usually cheaper to lay. Natural stone reads better against an older house and ages differently. We price both when the choice is genuinely open.",
-      },
-      {
-        question: "How long before we can use it?",
-        answer:
-          "A mortared surface needs a curing period. Dry laid work is usable as soon as the joints are set and swept, normally the same week.",
-      },
-    ],
-    metaTitle: "Interlock and Natural Stone Patios, Hamilton",
-    metaDescription:
-      "Terraces, steps, retaining walls and driveways built on a full depth base with drainage designed in. Serving Hamilton, Burlington, Ancaster and Oakville.",
-  },
-  {
-    slug: "pools-and-water",
-    title: "Pools, spas and water",
-    summary:
-      "Coping, decking and the grading that surrounds a pool, led by us or scheduled around your pool contractor.",
-    intro:
-      "A pool is only as good as the ground around it. We handle the surround, the drainage and the planting that makes the whole thing feel like part of the garden rather than an appliance dropped into a lawn.",
-    photo: "serviceWater",
-    includes: [
-      "Coping and deck surfaces",
-      "Grading and deck drainage",
-      "Equipment screening",
-      "Fencing and gate coordination",
-      "Water features and spillways",
-    ],
-    detail: [
-      {
-        title: "We work either way",
-        body: "We lead the whole build and bring the pool contractor in, or we work to their schedule and take over at backfill. Both happen often, and the sequence gets agreed before anyone digs.",
-      },
-      {
-        title: "The deck sheds away from the water",
-        body: "Falls, drains and the coping detail get designed together. Getting this wrong is what puts silt and debris in a pool every time it rains.",
-      },
-      {
-        title: "Planting softens the equipment",
-        body: "Pumps, heaters and fencing are part of the design brief, not an afterthought to screen once the concrete is poured.",
+        title: "Joints and edges are the tell",
+        body: "Whether a patio is tight jointed or set in decorative stone, the edge restraint and the cuts at every border are the reason it still lines up in year ten.",
       },
     ],
     faqs: [
       {
-        question: "Do you install the pool itself?",
+        question: "Slabs with stone joints, or tight laid interlock?",
         answer:
-          "No. Pool shells and mechanical systems are a licensed trade of their own. We design and build everything around it and coordinate the sequence.",
+          "Both work well here. Large format slabs with a decorative stone joint drain freely and suit a modern yard. Tight laid interlock gives a continuous surface and takes vehicle loads. We price whichever suits the use.",
       },
       {
-        question: "When should the landscape be designed?",
+        question: "How long does a patio take?",
         answer:
-          "Before the pool is sited if possible. Moving a pool on paper costs nothing. Moving the grade around a finished pool costs a great deal.",
+          "A typical rear yard patio runs one to two weeks depending on access and how much excavation is involved. Restricted access with no rear gate is the biggest variable.",
       },
     ],
-    metaTitle: "Pool Surrounds and Water Features, Burlington",
+    metaTitle: "Interlock, Patios and Hardscape in Hamilton",
     metaDescription:
-      "Pool coping, decking, drainage and planting designed as one landscape. Working with your pool contractor across Burlington, Oakville and Hamilton.",
+      "Patios, walkways, steps, driveways and retaining walls built on a full depth base with drainage designed in. Serving Hamilton and the surrounding areas.",
   },
   {
-    slug: "planting-and-soil",
-    title: "Planting and soil",
+    slug: "lawn-care",
+    title: "Lawn care",
     summary:
-      "Beds rebuilt from the soil up, with species chosen for the exposure they actually get on your property.",
+      "Weekly cutting, fertilising, aeration and new sod, on a schedule you do not have to chase.",
     intro:
-      "Most failed planting in this region is a soil problem wearing a plant costume. We test what is there, amend it properly, and choose species for the light, wind and drainage your garden really has.",
-    photo: "servicePlanting",
+      "A good lawn is a maintenance programme rather than a product. We cut on a fixed weekly rotation, feed it on a schedule that matches the season, and fix the soil underneath when the grass is telling us that is the real problem.",
+    photo: "serviceLawn",
+    billing: "seasonal",
     includes: [
-      "Soil testing and amendment",
-      "Bed construction and edging",
-      "Native and adapted species",
-      "Seasonal planting windows",
-      "First year establishment care",
+      "Weekly cutting and trimming",
+      "Seasonal fertiliser programme",
+      "Core aeration and overseeding",
+      "New sod and grading",
+      "Spring and autumn cleanups",
     ],
     detail: [
       {
-        title: "Soil first",
-        body: "Compaction, pH and drainage get corrected before anything is planted. New plants into old compacted clay is the most expensive way to buy firewood.",
+        title: "Same day, every week",
+        body: "Properties are grouped by area so your cut lands on the same day each week. The crew works one route rather than criss crossing the region, which is how the schedule stays reliable.",
       },
       {
-        title: "Exposure decides the list",
-        body: "A south facing wall in Stoney Creek and a shaded north side in Dundas are different climates. The planting list follows the site, not a catalogue.",
+        title: "Feeding beats patching",
+        body: "Most thin lawns in this region are a soil and compaction problem. Aeration and a proper feeding schedule fix more than repeatedly reseeding the same bare patch.",
       },
       {
-        title: "Planted in the right window",
-        body: "Spring and early autumn give roots time to establish. We schedule planting to those windows rather than to whenever the hard landscape happens to finish.",
+        title: "New sod gets a proper bed",
+        body: "Sod laid onto compacted subsoil roots poorly and shows it by August. We strip, grade and add screened topsoil before anything is rolled out.",
       },
     ],
     faqs: [
       {
-        question: "Do you use native plants?",
+        question: "Do you take on weekly cutting only?",
         answer:
-          "Where they suit the conditions and the look you want, yes. A mixed list of natives and well adapted non natives usually performs better than either approach on its own.",
+          "Yes. Weekly maintenance is sold on its own and does not require a build with us first.",
       },
       {
-        question: "What happens if something dies?",
+        question: "What happens if it rains on our day?",
         answer:
-          "Plant material carries a one year replacement on stock we supply and install, provided the watering schedule we leave you has been followed.",
+          "The route shifts to the next working day. We do not cut saturated turf, because it tears the crown and leaves ruts that last all season.",
       },
     ],
-    metaTitle: "Garden Planting and Soil Preparation, Hamilton Area",
+    metaTitle: "Lawn Care and Maintenance in Hamilton",
     metaDescription:
-      "Beds rebuilt from the soil up with species chosen for real exposure. Soil testing, amendment and establishment care across Hamilton and Burlington.",
+      "Weekly cutting, seasonal fertilising, aeration, overseeding and new sod for homes in Hamilton and the surrounding areas. Fixed weekly schedule by area.",
   },
   {
-    slug: "lighting-and-irrigation",
-    title: "Lighting and irrigation",
+    slug: "irrigation",
+    title: "Irrigation",
     summary:
-      "Low voltage lighting and zoned irrigation, sleeved and wired before the stone goes down.",
+      "Zoned systems installed, serviced, started in spring and blown out before the first freeze.",
     intro:
-      "Both of these systems are cheap to install during a build and expensive to retrofit afterwards. Sleeving and wiring go in while the ground is open, even when the fixtures come later.",
-    photo: "serviceLighting",
+      "Irrigation is cheap to install while the ground is open and expensive to retrofit afterwards. Zones are set by what each area actually needs, so beds and turf are not watered on the same schedule.",
+    photo: "serviceIrrigation",
+    billing: "seasonal",
     includes: [
-      "Low voltage LED lighting",
-      "Zoned drip and spray irrigation",
-      "Sleeving under all hard surfaces",
-      "Timers and controllers",
-      "Autumn shutdown and spring start",
+      "System design and installation",
+      "Zoned drip and spray",
+      "Sleeving under hard surfaces",
+      "Controllers and rain sensors",
+      "Spring start and autumn blowout",
     ],
     detail: [
       {
-        title: "Sleeving is not optional",
-        body: "Conduit under every hard surface costs very little during construction. Without it, adding a light or a line later means cutting a terrace apart.",
-      },
-      {
-        title: "Light the ground, not the neighbours",
-        body: "Low fixtures grazing stone and planting do more than floodlights aimed at a house. Restraint reads as expensive, and it keeps light out of bedrooms.",
+        title: "Sleeving during construction",
+        body: "Conduit under every hard surface costs very little while a patio is being built. Without it, adding a line later means cutting the patio apart.",
       },
       {
         title: "Zones follow water need",
-        body: "Lawn, beds and containers dry out at different rates. Separate zones mean each gets what it needs instead of everything getting the same.",
+        body: "Turf, beds and containers dry out at different rates. Separate zones mean each gets what it needs instead of everything getting the same and something always being wrong.",
+      },
+      {
+        title: "Winterised properly",
+        body: "Lines are blown out with compressed air before the first hard freeze. A system left charged over a Hamilton winter is a repair bill in April.",
       },
     ],
     faqs: [
       {
-        question: "Can lighting be added to an existing garden?",
+        question: "Can a system be added to a finished garden?",
         answer:
-          "Yes, though cable routing around finished hard landscape limits where fixtures can go. It is always cheaper and tidier as part of a build.",
+          "Yes. Trenching through established turf heals over within a few weeks. Running lines under existing hard surfaces is the part that gets expensive.",
       },
       {
-        question: "Do you handle winterisation?",
+        question: "Do you service systems you did not install?",
         answer:
-          "Autumn shutdown and spring start up are included for the first year on systems we install, and available as a seasonal service after that.",
+          "Yes, including seasonal start ups and blowouts, provided the system is in serviceable condition when we first see it.",
       },
     ],
-    metaTitle: "Landscape Lighting and Irrigation, Hamilton",
+    metaTitle: "Irrigation Installation and Service, Hamilton",
     metaDescription:
-      "Low voltage landscape lighting and zoned irrigation, sleeved during construction. Design, installation and seasonal service in the west GTA.",
+      "Zoned irrigation designed, installed and serviced in Hamilton and the surrounding areas. Sleeving, controllers, spring start up and autumn blowouts.",
+  },
+  {
+    slug: "garden-maintenance",
+    title: "Garden maintenance",
+    summary:
+      "Beds edged, mulched, pruned and weeded through the season so the planting keeps its shape.",
+    intro:
+      "Planting is the part of a property that changes every week. Regular maintenance is what separates a garden that reads as designed from one that reads as overgrown, and it costs far less than rebuilding beds every few years.",
+    photo: "serviceGarden",
+    billing: "seasonal",
+    includes: [
+      "Bed edging and mulch",
+      "Pruning and shaping",
+      "Weeding through the season",
+      "Seasonal planting rotations",
+      "Spring and autumn cleanups",
+    ],
+    detail: [
+      {
+        title: "The edge does most of the work",
+        body: "A cut edge between bed and lawn is the single detail that makes planting look maintained. It gets recut every visit rather than once a year.",
+      },
+      {
+        title: "Mulch is depth, not decoration",
+        body: "Laid at the right depth, mulch suppresses weeds and holds moisture through August. Laid thin for appearance, it does neither and needs redoing by midsummer.",
+      },
+      {
+        title: "Pruned to the plant, not the calendar",
+        body: "Shrubs get cut on their own cycle. Shearing everything into balls in June is why so many front gardens stop flowering.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How often do you visit?",
+        answer:
+          "Most properties are every two weeks through the growing season, with heavier spring and autumn cleanups. Larger or more detailed gardens go weekly.",
+      },
+      {
+        question: "Can maintenance be combined with lawn care?",
+        answer:
+          "Yes, and it usually is. Combining them means one crew, one visit and one invoice, and the beds and the turf get looked at together.",
+      },
+    ],
+    metaTitle: "Garden Maintenance in Hamilton",
+    metaDescription:
+      "Bed edging, mulching, pruning, weeding and seasonal cleanups for homes in Hamilton and the surrounding areas. Weekly or fortnightly through the season.",
   },
 ];
 
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
+
+export const projectServices = services.filter((service) => service.billing === "project");
+export const seasonalServices = services.filter((service) => service.billing === "seasonal");

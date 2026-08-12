@@ -14,7 +14,7 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Projects",
   description:
-    "Recent landscape builds across Ancaster, Burlington and Dundas. What the property was doing wrong, what we changed, and how it has held up since.",
+    "Recent landscaping work around Hamilton. What each property was doing wrong, what we changed, and how it has held up since.",
   path: "/projects",
 });
 
