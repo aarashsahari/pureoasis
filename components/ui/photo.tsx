@@ -3,7 +3,15 @@ import path from "node:path";
 import Image from "next/image";
 import { Camera } from "@phosphor-icons/react/ssr";
 
+import blurSeeds from "@/lib/photo-blur.json";
 import { photos, type PhotoKey } from "@/lib/photos";
+
+/**
+ * Blur seeds are written by `npm run photos:fetch`. When a slot has one, the
+ * image fades up from a blur instead of popping in, which is the difference
+ * between a page that feels considered and one that feels like it is loading.
+ */
+const blurMap = blurSeeds as Record<string, string>;
 
 /**
  * Renders a photographic slot.
@@ -64,6 +72,7 @@ export function Photo({
           height={photo.height}
           sizes={sizes}
           priority={priority}
+          {...(blurMap[slot] ? { placeholder: "blur" as const, blurDataURL: blurMap[slot] } : {})}
           className="h-full w-full object-cover"
         />
       </div>

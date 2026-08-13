@@ -24,6 +24,12 @@ export type PhotoSlot = {
   brief: string;
   /** True when the photograph exists and only needs exporting. */
   have?: boolean;
+  /**
+   * Search terms used by `npm run photos:fetch` to pull a licensed stock
+   * stand-in for this slot. Stand-ins are placeholders with a picture on
+   * them, not the finished site. Replace them with real job photography.
+   */
+  stockQuery?: string;
 };
 
 export const photos = {
@@ -37,6 +43,7 @@ export const photos = {
     height: 1200,
     brief:
       "The slab patio with black stone joints and new sod against the cedar fence. Export at 1600px on the long edge, no crop needed.",
+    stockQuery: "concrete paver patio backyard",
     have: true,
   },
   patioSlabsPortrait: {
@@ -46,6 +53,7 @@ export const photos = {
     height: 1750,
     brief:
       "Same slab patio photograph, cropped to a 4:5 portrait for the home page hero. Keep the run of slabs and the sod edge in frame, crop from the sides.",
+    stockQuery: "stone patio garden path",
     have: true,
   },
   frontEntryStone: {
@@ -55,6 +63,7 @@ export const photos = {
     height: 1200,
     brief:
       "The overhead of the stamped concrete entry with the black river rock inlay and the mulched bed. Export as shot.",
+    stockQuery: "front garden walkway house",
     have: true,
   },
   frontLawnStriped: {
@@ -63,6 +72,7 @@ export const photos = {
     width: 1600,
     height: 1200,
     brief: "The striped front lawn with the mulched beds and the walkway. Export as shot.",
+    stockQuery: "mowed lawn stripes house front yard",
     have: true,
   },
   sideYardBefore: {
@@ -72,6 +82,7 @@ export const photos = {
     height: 1200,
     brief:
       "Before frame of the side yard. Keep it exactly as shot, including the raised beds and the bare patches. Do not colour correct it to look better than it was.",
+    stockQuery: "overgrown backyard weeds fence",
     have: true,
   },
   sideYardAfter: {
@@ -81,6 +92,7 @@ export const photos = {
     height: 1200,
     brief:
       "After frame of the side yard, shot from the matching end so the pair reads as the same place.",
+    stockQuery: "stepping stone path lawn garden",
     have: true,
   },
 
@@ -94,6 +106,7 @@ export const photos = {
     height: 900,
     brief:
       "Design service. Overhead of a plan with material samples. Warm task light, tight crop, no branded product labels.",
+    stockQuery: "landscape garden plan drawing",
   },
   serviceHardscape: {
     src: "/images/service-hardscape.jpg",
@@ -102,6 +115,7 @@ export const photos = {
     height: 900,
     brief:
       "Hardscape service. Hands and a slab or stone in motion, granular base visible. Take this on any build day, it is the most valuable photo on the site.",
+    stockQuery: "paving stone installation construction",
   },
   serviceLawn: {
     src: "/images/service-lawn.jpg",
@@ -110,6 +124,7 @@ export const photos = {
     height: 900,
     brief:
       "Lawn care service. Mid cut, stripe visible behind the machine. Shoot low so the stripe reads.",
+    stockQuery: "lawn mower cutting grass",
   },
   serviceIrrigation: {
     src: "/images/service-irrigation.jpg",
@@ -118,6 +133,7 @@ export const photos = {
     height: 900,
     brief:
       "Irrigation service. A head running, water visible, shot low against planting. Early morning light works best.",
+    stockQuery: "garden sprinkler watering lawn",
   },
   serviceGarden: {
     src: "/images/service-garden.jpg",
@@ -126,6 +142,7 @@ export const photos = {
     height: 900,
     brief:
       "Garden maintenance service. Tight crop on a cut bed edge where mulch meets turf. This one detail sells the service.",
+    stockQuery: "garden mulch flower bed",
   },
 
   backyardCover: {
@@ -135,6 +152,7 @@ export const photos = {
     height: 1080,
     brief:
       "Rear yard project, wide establishing shot from the house. If the slab patio job has a wider frame, use it here.",
+    stockQuery: "landscaped backyard garden lawn",
   },
   frontEntryCover: {
     src: "/images/project-front-entry.jpg",
@@ -142,6 +160,7 @@ export const photos = {
     width: 2400,
     height: 1080,
     brief: "Front entry project, wide establishing shot from the street or driveway.",
+    stockQuery: "house front yard landscaping",
   },
   sideYardDetail: {
     src: "/images/side-yard-detail.jpg",
@@ -149,6 +168,7 @@ export const photos = {
     width: 1200,
     height: 900,
     brief: "Side yard project detail. Close crop where the stepping stone meets the stone and the sod edge.",
+    stockQuery: "stepping stone gravel path detail",
   },
   backyardDetail: {
     src: "/images/project-backyard-detail.jpg",
@@ -156,6 +176,7 @@ export const photos = {
     width: 1200,
     height: 900,
     brief: "Rear yard project detail. Tight crop on a joint or the sod edge. Proves the workmanship.",
+    stockQuery: "paving stone edge grass detail",
   },
   frontEntryDetail: {
     src: "/images/project-front-entry-detail.jpg",
@@ -163,6 +184,7 @@ export const photos = {
     width: 1200,
     height: 900,
     brief: "Front entry project detail. The inground light and the inlay edge, shot square on.",
+    stockQuery: "garden path light fixture",
   },
 
   aboutLead: {
@@ -171,6 +193,7 @@ export const photos = {
     width: 1600,
     height: 1200,
     brief: "About lead. The crew at the setting out stage. Documentary, not posed.",
+    stockQuery: "landscaping worker garden work",
   },
   aboutDetail: {
     src: "/images/about-detail.jpg",
@@ -178,6 +201,7 @@ export const photos = {
     width: 900,
     height: 1200,
     brief: "About detail. Portrait crop of a level or a string line being checked. Close and tactile.",
+    stockQuery: "hands gardening tools soil",
   },
   aboutYard: {
     src: "/images/about-yard.jpg",
@@ -185,6 +209,7 @@ export const photos = {
     width: 1200,
     height: 900,
     brief: "About supporting frame. Materials on the truck or at the yard, early morning.",
+    stockQuery: "wheelbarrow garden soil materials",
   },
 
   teamLead: {
@@ -193,6 +218,7 @@ export const photos = {
     width: 900,
     height: 1100,
     brief: "Team portrait. Natural light, plain background, shoulders up, no crossed arms.",
+    stockQuery: "portrait gardener outdoors",
   },
   teamBuild: {
     src: "/images/team-build.jpg",
@@ -200,6 +226,7 @@ export const photos = {
     width: 900,
     height: 1100,
     brief: "Team portrait, matched to the other. Shot on site rather than in studio.",
+    stockQuery: "portrait worker outdoors",
   },
 
   postFreezeThaw: {
@@ -208,6 +235,7 @@ export const photos = {
     width: 1200,
     height: 800,
     brief: "Journal cover. Evidence of frost heave on a tired patio. Honest, slightly grim, well lit.",
+    stockQuery: "cracked paving stones frost",
   },
   postLawn: {
     src: "/images/post-lawn.jpg",
@@ -215,6 +243,7 @@ export const photos = {
     width: 1200,
     height: 800,
     brief: "Journal cover. Aeration plugs on turf, shot close. Shows the soil profile.",
+    stockQuery: "lawn grass soil close up",
   },
   postBudget: {
     src: "/images/post-budget.jpg",
@@ -222,6 +251,7 @@ export const photos = {
     width: 1200,
     height: 800,
     brief: "Journal cover. A plan with annotations and a tape. Planning and cost without showing money.",
+    stockQuery: "blueprint plan tape measure",
   },
 
   ctaLead: {
@@ -230,6 +260,7 @@ export const photos = {
     width: 1200,
     height: 900,
     brief: "Closing band, main frame. Evening, looking back at the house from the garden.",
+    stockQuery: "garden patio evening lights",
   },
   ctaSecond: {
     src: "/images/cta-second.jpg",
@@ -237,6 +268,7 @@ export const photos = {
     width: 800,
     height: 1000,
     brief: "Closing band, second frame. Portrait, a path or level change through planting.",
+    stockQuery: "garden steps path plants",
   },
   ctaThird: {
     src: "/images/cta-third.jpg",
@@ -244,6 +276,7 @@ export const photos = {
     width: 800,
     height: 800,
     brief: "Closing band, third frame. Square, a single warm focal point after dark.",
+    stockQuery: "fire pit patio evening",
   },
 
   contactSide: {
@@ -252,6 +285,7 @@ export const photos = {
     width: 1200,
     height: 1500,
     brief: "Consult section. Portrait crop of the first site visit. Candid, sketchbook or tape in frame.",
+    stockQuery: "people talking garden consultation",
   },
 } satisfies Record<string, PhotoSlot>;
 

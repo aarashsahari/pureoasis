@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ClosingBand } from "@/components/site/closing-band";
 import { Testimonials } from "@/components/site/testimonials";
+import { WorkGallery } from "@/components/site/work-gallery";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageTransition } from "@/components/ui/page-transition";
@@ -86,6 +87,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
+      <WorkGallery />
       <Testimonials />
       <ClosingBand />
     </PageTransition>

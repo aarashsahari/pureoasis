@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { SiteFooter } from "@/components/site/site-footer";
+import { MobileCallBar } from "@/components/site/mobile-call-bar";
 import { SiteHeader } from "@/components/site/site-header";
 import { TopBar } from "@/components/site/top-bar";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <MobileCallBar />
       </body>
     </html>
   );
