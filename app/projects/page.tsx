@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { ClosingBand } from "@/components/site/closing-band";
-import { Testimonials } from "@/components/site/testimonials";
 import { WorkGallery } from "@/components/site/work-gallery";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
@@ -73,10 +72,6 @@ export default function ProjectsPage() {
                           <dt className="text-ink-muted">Location</dt>
                           <dd className="text-ink">{project.location}</dd>
                         </div>
-                        <div className="flex justify-between gap-6 border-t border-line py-3 text-[14px]">
-                          <dt className="text-ink-muted">Completed</dt>
-                          <dd className="text-ink">{project.year}</dd>
-                        </div>
                       </dl>
                     </div>
                   </Link>
@@ -88,7 +83,6 @@ export default function ProjectsPage() {
       </section>
 
       <WorkGallery />
-      <Testimonials />
       <ClosingBand />
     </PageTransition>
   );

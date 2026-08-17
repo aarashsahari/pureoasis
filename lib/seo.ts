@@ -59,25 +59,13 @@ export function localBusinessSchema() {
     telephone: business.phone,
     email: business.email,
     image: `${SITE_URL}${DEFAULT_OG}`,
-    priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: business.streetAddress,
       addressLocality: business.locality,
       addressRegion: business.region,
-      postalCode: business.postalCode,
-      addressCountry: "CA",
+      addressCountry: business.country,
     },
     areaServed: areas.map((area) => ({ "@type": "City", name: area.city })),
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
-        closes: "17:00",
-      },
-    ],
-    sameAs: business.social.map((account) => account.href),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Landscape services",

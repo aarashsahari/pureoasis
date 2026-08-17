@@ -18,30 +18,24 @@ npm run photos   # draw the demo artwork for any photo slot missing a file
 
 ## Before this goes live
 
-Three things are placeholders, all flagged with `TODO(client)` in the source.
+This is a demo. It carries no real business data, on purpose:
 
-1. **Business details, claims and numbers.** `lib/content.ts` holds the
-   business record, the coverage claims, the four headline statistics and the
-   testimonials. They are written to read like a real firm in this market, but
-   they are invented. Replace them, and drop any claim the business cannot
-   stand behind. The three projects in `lib/projects.ts` and the three posts in
-   `lib/posts.ts` are the same: plausible, not real.
-2. **Imagery.** Every slot is filled with generated demo artwork drawn in the
-   site palette by `npm run photos`. It is deliberately abstract: paving grids
-   for hardscape, mown bands for lawn care, contour lines for design, ripples
-   for irrigation, leaf forms for planting, layered horizons for the wide
-   frames. Nobody should mistake it for photographs of jobs.
+- The phone number uses the `555-01xx` range reserved for fictional use and the
+  inbox uses `example.com`, reserved for documentation. Neither can reach
+  anyone. Replace both in `lib/content.ts`.
+- There is no street address, only the city. Add one if you want a full
+  `PostalAddress` in the structured data.
+- Nothing quotes a price, a founding year, a warranty term, a project date or
+  a customer. The pricing tiers describe scope and say the work is quoted after
+  a site visit, which is true of the trade and safe to publish as is.
+- The projects and journal posts are demo writing. Replace them with real jobs
+  before this represents the business.
+- Imagery is generated artwork, not photography. See below.
 
-   To use a real photograph, save it over the file at the same path in
-   `public/images` at the same dimensions, and rewrite that slot's alt text in
-   `lib/photos.ts` to describe it. `npm run photos` leaves existing files alone
-   and only regenerates what is missing, so your photographs are safe; pass
-   `--force` to redraw everything.
+`app/api/consult/route.ts` validates the enquiry form and logs it. Point it at
+an inbox or a CRM and add spam protection.
 
-3. **Where enquiries go.** `app/api/consult/route.ts` validates the consult
-   form and logs it. Point it at an inbox or a CRM and add spam protection.
-
-Also update `SITE_URL` in `lib/content.ts` if the domain is not `pureoasis.ca`.
+Update `SITE_URL` in `lib/content.ts` if the domain is not `pureoasis.ca`.
 Canonicals, the sitemap and every structured data block are built from it.
 
 ## Routes

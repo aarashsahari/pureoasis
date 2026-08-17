@@ -68,7 +68,7 @@ export default async function PostPage({ params }: Params) {
           <time dateTime={post.published}>{formatPostDate(post.published)}</time>
           {` · ${post.readingMinutes} min read`}
           <br />
-          {`${post.author}, ${post.authorRole}`}
+          {post.author}
         </p>
       </PageHeader>
 
@@ -102,7 +102,7 @@ export default async function PostPage({ params }: Params) {
           <Reveal>
             <div className="mx-auto mt-16 max-w-[68ch] border-t border-line pt-8">
               <p className="text-[15px] leading-relaxed text-ink-muted">
-                Written by {post.author}, {post.authorRole.toLowerCase()} at Pure Oasis.
+                Written by the Pure Oasis crew.
               </p>
             </div>
           </Reveal>

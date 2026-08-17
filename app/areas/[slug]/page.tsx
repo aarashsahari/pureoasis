@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 
 import { ClosingBand } from "@/components/site/closing-band";
-import { Testimonials } from "@/components/site/testimonials";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageTransition } from "@/components/ui/page-transition";
@@ -155,8 +154,6 @@ export default async function AreaPage({ params }: Params) {
           </Reveal>
         </div>
       </section>
-
-      <Testimonials />
       <ClosingBand />
     </PageTransition>
   );

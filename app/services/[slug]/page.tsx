@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: Params) {
                       {project.title}
                     </h3>
                     <p className="mt-2 text-[14px] text-ink-muted">
-                      {project.location}, {project.year}
+                      {project.location}
                     </p>
                   </Link>
                 </Reveal>

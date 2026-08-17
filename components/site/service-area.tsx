@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { Reveal } from "@/components/ui/reveal";
 import { areas } from "@/lib/areas";
-import { claims } from "@/lib/content";
 
 export function ServiceArea() {
   return (
@@ -29,16 +28,6 @@ export function ServiceArea() {
           </div>
         </Reveal>
 
-        <Reveal index={1}>
-          <dl className="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-8 sm:grid-cols-3 sm:gap-10">
-            {claims.map((claim) => (
-              <div key={claim.label}>
-                <dt className="text-[13px] text-ink-muted">{claim.label}</dt>
-                <dd className="display-tight mt-1 text-[19px] text-ink">{claim.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
       </div>
     </section>
   );

@@ -53,7 +53,6 @@ export default async function ProjectPage({ params }: Params) {
     name: project.title,
     description: project.metaDescription,
     url: `${SITE_URL}/projects/${project.slug}`,
-    dateCreated: project.year,
     locationCreated: { "@type": "Place", name: project.location },
     creator: { "@id": `${SITE_URL}/#business` },
     image: `${SITE_URL}${photos[project.cover].src}`,

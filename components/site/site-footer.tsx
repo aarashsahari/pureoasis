@@ -1,17 +1,11 @@
 import Link from "next/link";
-import { EnvelopeSimple, FacebookLogo, InstagramLogo, LinkedinLogo, Phone } from "@phosphor-icons/react/ssr";
+import { EnvelopeSimple, Phone } from "@phosphor-icons/react/ssr";
 
 import { Photo } from "@/components/ui/photo";
 import { areas } from "@/lib/areas";
 import { business, footer } from "@/lib/content";
 import type { PhotoKey } from "@/lib/photos";
 import { services } from "@/lib/services";
-
-const logos = {
-  Instagram: InstagramLogo,
-  Facebook: FacebookLogo,
-  LinkedIn: LinkedinLogo,
-} as const;
 
 /* The footer strip runs the four photographs the business already has. */
 const thumbnails: PhotoKey[] = [
@@ -40,24 +34,6 @@ export function SiteFooter() {
               {business.name}
             </Link>
             <p className="mt-5 max-w-[36ch] text-[15px] leading-relaxed text-ink-muted">{footer.blurb}</p>
-            <ul className="mt-6 flex items-center gap-3">
-              {business.social.map((account) => {
-                const Logo = logos[account.label];
-                return (
-                  <li key={account.label}>
-                    <a
-                      href={account.href}
-                      rel="noreferrer noopener"
-                      target="_blank"
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-edge border border-line text-ink-muted transition-colors duration-200 hover:border-ink hover:text-ink"
-                    >
-                      <Logo size={16} weight="regular" aria-hidden />
-                      <span className="sr-only">{account.label}</span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
           </div>
 
           <nav aria-label="Services" className="lg:col-span-2">
@@ -126,11 +102,7 @@ export function SiteFooter() {
                 {business.email}
               </a>
               <span className="mt-1 text-[14px] leading-relaxed text-ink-muted">
-                {business.addressLines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
+                {business.locality}, {business.region}
               </span>
             </address>
           </div>

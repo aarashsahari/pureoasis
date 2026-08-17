@@ -1,3 +1,7 @@
+// Demo content. Nothing here asserts a fact about a real business: no real
+// phone number, address, inbox, dates, prices or named customers. The phone
+// number uses the 555-01xx range reserved for fictional use and the inbox
+// uses example.com, reserved for documentation, so neither can reach anyone.
 
 export const SITE_URL = "https://pureoasis.ca";
 
@@ -5,43 +9,18 @@ export const business = {
   name: "Pure Oasis",
   legalName: "Pure Oasis Landscaping",
   tagline: "Full service landscaping",
-  // TODO(client): replace with the real published number.
-  phone: "(905) 462-7318",
-  phoneHref: "tel:+19054627318",
-  email: "hello@pureoasis.ca",
-  // TODO(client): replace with the real yard or office address.
-  addressLines: ["1240 Rymal Road East, Unit 6", "Hamilton, ON L8W 3N7"],
-  streetAddress: "1240 Rymal Road East, Unit 6",
+  phone: "(905) 555-0142",
+  phoneHref: "tel:+19055550142",
+  email: "hello@example.com",
   locality: "Hamilton",
   region: "ON",
-  postalCode: "L8W 3N7",
+  country: "CA",
   hours: [
-    { days: "Monday to Friday", time: "7:00 to 17:00" },
+    { days: "Monday to Friday", time: "By appointment" },
     { days: "Saturday", time: "By appointment" },
     { days: "Sunday", time: "Closed" },
   ],
-  // TODO(client): point these at the real accounts, or delete the ones that do not exist.
-  social: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Facebook", href: "https://facebook.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-  ],
 } as const;
-
-/** TODO(client): confirm each of these before the site goes live. */
-export const claims = [
-  { label: "Serving the region since", value: "2009" },
-  { label: "Coverage", value: "Fully insured, WSIB covered" },
-  { label: "Workmanship warranty", value: "Three years, in writing" },
-] as const;
-
-/** TODO(client): every one of these numbers needs to be a real number. */
-export const stats = [
-  { value: "412", label: "Properties built or maintained since 2009" },
-  { value: "68%", label: "Of last season's work came from referrals" },
-  { value: "9", label: "People on the crew, no subcontracted labour" },
-  { value: "3 years", label: "Written workmanship warranty on every build" },
-] as const;
 
 export const nav = {
   links: [
@@ -73,7 +52,7 @@ export const about = {
   story: [
     "Pure Oasis Landscaping transforms outdoor spaces into landscapes that are worth looking at and easy to live with, and that hold their value. We work across design, hardscape, lawn care, irrigation and garden maintenance, which means most of our properties get built and then looked after by the same people.",
     "That combination is the whole point. A patio is laid by the crew who will be edging the sod against it next season. Beds are planted at a spacing that can actually be maintained. Irrigation is sleeved during the build because we know what retrofitting one costs.",
-    "We take on a limited number of builds each season and keep the maintenance routes tight by area, so the schedule holds. Two crews would double the revenue and halve the supervision, and the supervision is the product.",
+    "We keep the maintenance routes tight by area so the schedule holds, and we would rather turn down a build than run two crews and supervise neither properly.",
   ],
   values: [
     {
@@ -90,20 +69,14 @@ export const about = {
     },
     {
       title: "We say what things cost",
-      body: "Build ranges and seasonal rates are published on this site. A fixed price follows the site visit rather than the other way round.",
+      body: "You get a scope and a fixed price after the site visit, not a number over the phone that moves once we are on site.",
     },
   ],
   team: [
     {
-      name: "Renata Ilić",
-      role: "Design and estimating",
-      bio: "Draws the plans and prices the work. Nine years on residential properties across the region before joining Pure Oasis.",
-      photo: "teamLead",
-    },
-    {
-      name: "Marcus Adeyemi",
+      name: "Ramiro",
       role: "Crew lead",
-      bio: "Runs the build crew and the maintenance routes. Started in hardscape at nineteen and has been setting stone in this region ever since.",
+      bio: "Runs the build crew and the maintenance routes, and is on site for the length of every job.",
       photo: "teamBuild",
     },
   ],
@@ -118,7 +91,7 @@ export const process = {
     },
     {
       title: "Quote or plan",
-      body: "Maintenance gets a seasonal rate. Builds get a layout, material selections and a fixed price with two rounds of revisions.",
+      body: "Maintenance gets a seasonal rate. Builds get a layout, material selections and a fixed price.",
     },
     {
       title: "The work",
@@ -151,45 +124,21 @@ export const durability = {
   ],
 } as const;
 
-export const testimonials = {
-  headline: "From homeowners in the region.",
-  items: [
-    {
-      quote:
-        "They found a drainage problem the previous contractor had buried. Four winters on, the patio has not moved.",
-      name: "Marisol Trần",
-      place: "Ancaster",
-    },
-    {
-      quote:
-        "Same crew every week, same day, and the beds get edged without us having to ask.",
-      name: "Devin Okonkwo",
-      place: "Burlington",
-    },
-    {
-      quote:
-        "The side yard went from the worst part of the property to the way we walk into the garden.",
-      name: "Hannah Beaudoin",
-      place: "Dundas",
-    },
-  ],
-} as const;
-
 export const pricing = {
-  headline: "What it costs here.",
-  note: "Ranges are indicative. A fixed price follows the site visit.",
+  headline: "How the work is priced.",
+  note: "Every property is quoted after a site visit. Access, grade and what is under the topsoil move the number more than square footage does.",
   buildsHeading: "Builds, priced by the job",
   seasonalHeading: "Maintenance, priced by the season",
   tiers: [
     {
       title: "Walkway, entry or small patio",
-      range: "$6,000 to $18,000",
+      range: "Quoted per job",
       body: "A single surface done properly. Excavation, base, edge restraint and the sod or planting that finishes it.",
       includes: ["Excavation and base", "Paving or slabs", "Edging and sod repair"],
     },
     {
       title: "Full yard makeover",
-      range: "$25,000 to $90,000",
+      range: "Quoted per job",
       body: "Grading, drainage, hardscape, planting and sod delivered as one build rather than in stages.",
       includes: [
         "Grading and drainage",
@@ -201,7 +150,7 @@ export const pricing = {
     },
     {
       title: "Whole property programme",
-      range: "$100,000 and up",
+      range: "Quoted per property",
       body: "Front and rear rebuilt together, phased across seasons, with irrigation and lighting run through the whole property.",
       includes: ["Multi phase schedule", "Front and rear", "Full irrigation", "Lighting"],
     },
@@ -209,20 +158,20 @@ export const pricing = {
   seasonal: [
     {
       title: "Lawn care",
-      range: "From $55 per visit",
+      range: "Per visit",
       body: "Weekly cutting, trimming and blow down, on a fixed day by area.",
       includes: ["Weekly cut and trim", "Fertiliser programme", "Spring and autumn cleanup"],
     },
     {
       title: "Lawn and garden",
-      range: "From $95 per visit",
+      range: "Per visit",
       body: "Everything in lawn care, plus the beds edged, weeded and kept in shape through the season.",
       includes: ["All of lawn care", "Bed edging and weeding", "Pruning and shaping", "Mulch top up"],
       featured: true,
     },
     {
       title: "Full property care",
-      range: "Quoted per property",
+      range: "Per season",
       body: "Lawn, beds, irrigation start up and blowout, and seasonal planting, on one schedule and one invoice.",
       includes: ["All of lawn and garden", "Irrigation service", "Seasonal planting", "Priority scheduling"],
     },
@@ -231,7 +180,7 @@ export const pricing = {
 
 export const consult = {
   headline: "Tell us about the property.",
-  body: "We answer within one business day and book site visits Monday to Friday. Maintenance routes fill by April and build work is scheduled in order of booking.",
+  body: "Send the address and what you are hoping to change, and we will arrange a site visit. Build work is scheduled in order of booking, so earlier in the season is easier.",
   projectTypes: [
     "Weekly lawn care",
     "Garden maintenance",
@@ -242,17 +191,15 @@ export const consult = {
   ],
   budgets: [
     "Maintenance, not a build",
-    "Under $10,000",
-    "$10,000 to $25,000",
-    "$25,000 to $60,000",
-    "Over $60,000",
+    "Still working it out",
+    "I have a figure in mind",
   ],
   timelines: ["This season", "Next season", "Planning ahead"],
 } as const;
 
 export const closing = {
   headline: "The best time to start is the season before you want to use it.",
-  body: "Build work is scheduled in order of booking and maintenance routes fill by April. Starting in autumn is how a yard is finished by the following June.",
+  body: "Design and quoting take time, and build work is scheduled in order of booking. Starting in autumn is how a yard is finished by the following summer.",
   cta: { label: "Get a quote", href: "/contact" },
 } as const;
 

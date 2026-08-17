@@ -8,8 +8,6 @@ import { JournalTeaser } from "@/components/site/journal-teaser";
 import { Process } from "@/components/site/process";
 import { ServiceArea } from "@/components/site/service-area";
 import { Services } from "@/components/site/services";
-import { StatsBand } from "@/components/site/stats-band";
-import { Testimonials } from "@/components/site/testimonials";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageTransition } from "@/components/ui/page-transition";
 import { pageMetadata } from "@/lib/seo";
@@ -39,12 +37,10 @@ export default function HomePage() {
       <ServiceArea />
       <AboutTeaser />
       <Services />
-      <StatsBand />
       <BeforeAfter />
       <FeaturedProject />
       <Durability />
       <Process />
-      <Testimonials />
       <JournalTeaser />
       <ClosingBand />
     </PageTransition>

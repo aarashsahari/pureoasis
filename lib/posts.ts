@@ -25,8 +25,8 @@ export const posts: readonly Post[] = [
     excerpt:
       "Freeze and thaw does not damage stone. It damages what is underneath it, and by the third season the evidence reaches the surface.",
     published: "2026-03-18",
-    author: "Renata Ilić",
-    authorRole: "Design lead",
+    author: "Pure Oasis",
+    authorRole: "Crew",
     readingMinutes: 6,
     cover: "postFreezeThaw",
     metaTitle: "Why Patios Fail in Their Third Winter",
@@ -75,8 +75,8 @@ export const posts: readonly Post[] = [
     excerpt:
       "Reseeding the same bare patch every spring treats the symptom. In this region the cause is almost always underneath the grass.",
     published: "2026-04-22",
-    author: "Marcus Adeyemi",
-    authorRole: "Crew lead",
+    author: "Pure Oasis",
+    authorRole: "Crew",
     readingMinutes: 5,
     cover: "postLawn",
     metaTitle: "Why Lawns Thin Out Every August",
@@ -125,8 +125,8 @@ export const posts: readonly Post[] = [
     excerpt:
       "Most of the budget on a serious garden disappears before anything decorative arrives. Here is the honest breakdown.",
     published: "2026-05-14",
-    author: "Marcus Adeyemi",
-    authorRole: "Site supervisor",
+    author: "Pure Oasis",
+    authorRole: "Crew",
     readingMinutes: 7,
     cover: "postBudget",
     metaTitle: "What a Landscape Build Actually Costs",
@@ -161,8 +161,8 @@ export const posts: readonly Post[] = [
       {
         heading: "Ranges worth planning around",
         paragraphs: [
-          "For this region, a front garden and entry refresh usually runs from the high teens to the mid forties. A full rear garden build including grading, drainage, terrace, planting and lighting more often sits between sixty and a hundred and eighty thousand. Larger properties with pool surrounds and structures go beyond that.",
-          "Those are planning numbers, not quotes. A fixed price only follows a survey and a drawing.",
+          "The honest answer to what a build costs is that it depends on access, on grade, and on what is under the topsoil, and that any of the three can move the number more than the size of the yard does. A quote given over the phone before someone has stood on the property is a guess.",
+          "What is worth asking any contractor for is the split. If the base and drainage line is thin relative to the surface, the price is low because the part you cannot see was reduced.",
         ],
       },
     ],

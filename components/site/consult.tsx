@@ -48,11 +48,7 @@ export function Consult() {
                 </dl>
 
                 <address className="mt-4 border-t border-line pt-5 text-[14px] leading-relaxed text-ink-muted not-italic">
-                  {business.addressLines.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
+                  {business.locality}, {business.region}
                 </address>
               </div>
             </Reveal>

@@ -4,7 +4,6 @@ export type Project = {
   slug: string;
   title: string;
   location: string;
-  year: string;
   /** One line for the projects index. */
   summary: string;
   problem: string;
@@ -25,7 +24,6 @@ export const projects: readonly Project[] = [
     slug: "side-yard-transformation",
     title: "A dead side yard turned into the way into the garden",
     location: "Hamilton, Ontario",
-    year: "2025",
     summary:
       "Patchy grass, tired raised beds and loose gravel, replaced with a stepping stone run and new sod.",
     problem:
@@ -40,8 +38,6 @@ export const projects: readonly Project[] = [
     facts: [
       { label: "Location", value: "Hamilton, Ontario" },
       { label: "Scope", value: "Clearance, regrading, stepping stones, decorative stone, sod" },
-      { label: "Completed", value: "2025" },
-      { label: "Build time", value: "Under a week" },
     ],
     services: ["hardscape-and-interlock", "lawn-care", "landscape-design"],
     metaDescription:
@@ -51,7 +47,6 @@ export const projects: readonly Project[] = [
     slug: "slab-patio-and-sod",
     title: "A rear yard patio in large format slabs",
     location: "Hamilton, Ontario",
-    year: "2025",
     summary:
       "Large format slabs set with black stone joints, running to a clean sod edge along the fence.",
     problem:
@@ -65,8 +60,6 @@ export const projects: readonly Project[] = [
     facts: [
       { label: "Location", value: "Hamilton, Ontario" },
       { label: "Scope", value: "Excavation, base, slab patio, decorative stone joints, sod" },
-      { label: "Completed", value: "2025" },
-      { label: "Build time", value: "Under two weeks" },
     ],
     services: ["hardscape-and-interlock", "lawn-care"],
     metaDescription:
@@ -76,7 +69,6 @@ export const projects: readonly Project[] = [
     slug: "front-entry-and-beds",
     title: "A front entry rebuilt around the walk to the door",
     location: "Hamilton, Ontario",
-    year: "2025",
     summary:
       "Stamped concrete, a stone inlay, lit beds and a lawn kept on a weekly programme.",
     problem:
@@ -90,8 +82,6 @@ export const projects: readonly Project[] = [
     facts: [
       { label: "Location", value: "Hamilton, Ontario" },
       { label: "Scope", value: "Stamped concrete, stone inlay, bed construction, planting, lighting" },
-      { label: "Completed", value: "2025" },
-      { label: "Maintained since", value: "Weekly through the season" },
     ],
     services: ["hardscape-and-interlock", "garden-maintenance", "lawn-care"],
     metaDescription:

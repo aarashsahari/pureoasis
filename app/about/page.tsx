@@ -1,7 +1,6 @@
 import { ClosingBand } from "@/components/site/closing-band";
 import { Durability } from "@/components/site/durability";
 import { Process } from "@/components/site/process";
-import { StatsBand } from "@/components/site/stats-band";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageTransition } from "@/components/ui/page-transition";
@@ -74,17 +73,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <StatsBand />
-
       <section aria-label="Who you will be working with" className="border-b border-line">
         <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 lg:py-28">
           <Reveal>
             <h2 className="display max-w-[16ch] text-[2rem] sm:text-[2.5rem] lg:text-[3rem]">
-              Who you will be dealing with.
+              Who runs the work.
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-16 lg:w-[70%] lg:gap-14">
+          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-16 lg:w-[46%] lg:gap-14">
             {about.team.map((person, i) => (
               <Reveal key={person.name} index={i}>
                 <article>
