@@ -6,13 +6,6 @@ import { Reveal } from "@/components/ui/reveal";
 
 export type Crumb = { name: string; path: string };
 
-/**
- * The opening block on every page other than the home page.
- *
- * Breadcrumbs are here because on a site with services, projects, journal and
- * area pages, the visitor needs to know where they landed when they arrive
- * from a search result rather than from the navigation.
- */
 export function PageHeader({
   crumbs,
   title,

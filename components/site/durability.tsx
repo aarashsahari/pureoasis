@@ -1,11 +1,6 @@
 import { Reveal } from "@/components/ui/reveal";
 import { durability } from "@/lib/content";
 
-/**
- * The technical argument, laid out as a descent. Each point steps further
- * across the grid than the one above it, which gives the section its own
- * shape and keeps it from reading as another three column feature row.
- */
 const offsets = ["lg:col-span-7 lg:col-start-1", "lg:col-span-7 lg:col-start-3", "lg:col-span-7 lg:col-start-5"];
 
 export function Durability() {

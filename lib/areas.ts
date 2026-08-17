@@ -10,11 +10,6 @@ export type Area = {
   metaDescription: string;
 };
 
-/**
- * Area pages exist because the ground genuinely differs across the region and
- * that changes the build. They are not duplicated copy with a place name
- * swapped in, and they should not become that.
- */
 export const areas: readonly Area[] = [
   {
     slug: "hamilton",

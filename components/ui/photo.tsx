@@ -3,16 +3,6 @@ import Image from "next/image";
 import blurSeeds from "@/lib/photo-blur.json";
 import { photos, type PhotoKey } from "@/lib/photos";
 
-/**
- * Renders a photographic slot from the manifest.
- *
- * Every slot has a file in /public/images, so this just renders it. Swapping
- * in a real photograph means replacing the file at the same path: the size,
- * the alt text and the layout all come from the manifest and do not change.
- *
- * Blur seeds come from `npm run photos`, so images fade up from a blur of
- * themselves instead of popping in.
- */
 const blurMap = blurSeeds as Record<string, string>;
 
 type PhotoProps = {

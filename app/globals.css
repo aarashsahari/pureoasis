@@ -1,20 +1,6 @@
 @import "tailwindcss";
 
-/*
-  PURE OASIS - design tokens
-  --------------------------------------------------------------------------
-  Palette: "Spruce and Bone". Cool near-black spruce ground, bone type,
-  one accent (verdigris, the patina colour of weathered copper used on garden
-  hardware). Deliberately not the warm beige/brass palette that every premium
-  outdoor brand ships.
-
-  Radius system (locked): everything on the page uses --radius-edge (2px).
-  Cards, media, inputs and buttons share it. Do not introduce pills or 16px
-  cards without changing this token.
-
-  Theme: one theme for the whole page. Defaults to the visitor's system
-  preference, overridable with the header toggle. No section inverts.
-*/
+/* One accent, one radius, one theme at a time. Both themes defined below. */
 
 /* Self-hosted variable font (weight 100-900, width 62-125%). */
 @import "@fontsource-variable/archivo/standard.css";
@@ -144,16 +130,7 @@ body {
   border-radius: var(--radius-edge);
 }
 
-/*
-  Reveal safety net.
-
-  Scroll reveals start at opacity 0, which means the content depends on
-  JavaScript and on an intersection callback to appear. Both of the cases
-  where that is unacceptable are handled here rather than in the component:
-  visitors who asked for reduced motion, and visitors with no JavaScript
-  (see the noscript block in the root layout). In both, the content is simply
-  present with no entrance at all.
-*/
+/* Reveals start at opacity 0, so they need a way back without JS or motion. */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1 !important;
@@ -162,40 +139,62 @@ body {
   }
 }
 
-/*
-  Route transition.
-
-  Navigation between pages crossfades with a small lift instead of cutting.
-  The old page leaves quickly so it stops competing for attention, the new one
-  arrives a beat later. Applied through <PageTransition>, which wraps the
-  content of each page.
-
-  The sticky header and footer are not inside the transition, so the chrome
-  stays put while the page beneath it changes. That is what makes the site
-  feel continuous rather than reloaded.
-*/
+/* Long enough to read as a page load. Everything is prefetched otherwise. */
 ::view-transition-old(.page-swap) {
-  animation: 140ms ease-in both page-leave;
+  animation: 220ms cubic-bezier(0.4, 0, 1, 1) both page-leave;
 }
 
 ::view-transition-new(.page-swap) {
-  animation: 260ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both page-arrive;
+  animation: 420ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both page-arrive;
 }
 
 @keyframes page-leave {
   to {
     opacity: 0;
+    transform: translateY(-6px);
   }
 }
 
 @keyframes page-arrive {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.route-progress-run {
+  animation: route-progress-run 620ms cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+
+.route-progress-done {
+  animation: route-progress-done 380ms ease-out forwards;
+}
+
+@keyframes route-progress-run {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 82%;
+  }
+}
+
+@keyframes route-progress-done {
+  from {
+    width: 82%;
+    opacity: 1;
+  }
+  60% {
+    width: 100%;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 0;
   }
 }
 
@@ -205,12 +204,15 @@ body {
   ::view-transition-new(*) {
     animation: none !important;
   }
+
+  .route-progress-run,
+  .route-progress-done {
+    animation: none;
+    width: 100%;
+  }
 }
 
-/*
-  Film grain. Fixed, pointer-events-none, never on a scrolling container,
-  so it never triggers repaint work while the page moves.
-*/
+/* Fixed and pointer-events-none, never on a scrolling container. */
 .grain {
   position: fixed;
   inset: 0;

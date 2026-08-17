@@ -147,10 +147,6 @@ export default async function ServicePage({ params }: Params) {
             <div className="lg:col-span-7 lg:col-start-6">
               {service.faqs.map((faq, i) => (
                 <Reveal key={faq.question} index={i}>
-                  {/*
-                    Native disclosure. No JavaScript, keyboard operable by
-                    default, and it prints and searches like normal text.
-                  */}
                   <details className="group border-b border-line py-5">
                     <summary className="flex cursor-pointer items-start justify-between gap-6 text-[17px] font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
                       {faq.question}

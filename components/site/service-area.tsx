@@ -4,11 +4,6 @@ import { Reveal } from "@/components/ui/reveal";
 import { areas } from "@/lib/areas";
 import { claims } from "@/lib/content";
 
-/**
- * Service area and credentials band. Sits directly under the hero rather than
- * inside it, and carries the two questions every enquiry starts with: do you
- * come here, and are you covered.
- */
 export function ServiceArea() {
   return (
     <section aria-label="Service area and coverage" className="border-b border-line bg-surface">

@@ -5,15 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { beforeAfterProject } from "@/lib/projects";
 
-/**
- * Before and after, shown as a matched pair rather than a drag slider.
- *
- * The two frames are shot from the same end of the yard but not from an
- * identical position, which is normal for real job photography. A slider
- * would misalign them and draw attention to the mismatch. Side by side, with
- * the labels under the frames rather than stamped across them, the comparison
- * is the honest one: same place, same angle, different day.
- */
 export function BeforeAfter() {
   const project = beforeAfterProject;
   if (!project?.beforeAfter) return null;

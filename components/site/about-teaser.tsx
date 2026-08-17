@@ -5,11 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { about } from "@/lib/content";
 
-/**
- * About teaser. Three frames at three different sizes, stepped so the cluster
- * reads as a set of site photographs rather than a tidy gallery row, with the
- * argument for the practice beside it.
- */
 export function AboutTeaser() {
   return (
     <section aria-label="About Pure Oasis" className="border-b border-line">

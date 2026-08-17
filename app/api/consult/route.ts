@@ -1,14 +1,5 @@
 import { NextResponse } from "next/server";
 
-/**
- * Consult request endpoint.
- *
- * TODO(client): this currently validates the payload and logs it on the
- * server. Before launch, forward the request to wherever enquiries should
- * land, for example a transactional email provider or the CRM, and add spam
- * protection. Nothing else in the form needs to change.
- */
-
 type Payload = {
   name?: string;
   email?: string;

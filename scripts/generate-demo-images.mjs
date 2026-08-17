@@ -1,23 +1,5 @@
-/**
- * Generates the demo imagery for every photo slot.
- *
- *   npm run photos
- *
- * This is a demo site, so rather than leaving holes or borrowing stock
- * photographs of someone else's work, every slot gets a piece of generated
- * artwork drawn in the site palette. They are deliberately abstract: nobody
- * should mistake them for photographs of jobs that were never built.
- *
- * Each family suggests the subject rather than depicting it. Paving grids for
- * hardscape, mown bands for lawn care, contour lines for design, ripples for
- * irrigation, foliage for planting, layered horizons for the wide frames.
- *
- * Everything is seeded from the slot name, so a slot always renders the same
- * image and the set stays visually varied.
- *
- * Replacing one with a real photograph is just dropping a file at the same
- * path; this script never overwrites an existing file unless given --force.
- */
+// Draws the demo artwork for every photo slot, seeded from the slot name so
+// output is stable. Existing files are left alone unless --force.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";

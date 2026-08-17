@@ -5,10 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { HeroEnter } from "@/components/ui/reveal";
 import { hero } from "@/lib/content";
 
-/**
- * Asymmetric split hero. Copy occupies seven columns, the photograph five,
- * dropped slightly so the two blocks do not share a top line.
- */
 export function Hero() {
   return (
     <section id="top" className="border-b border-line">

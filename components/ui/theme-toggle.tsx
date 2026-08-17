@@ -8,15 +8,6 @@ const THEME_EVENT = "pureoasis:themechange";
 
 type Theme = "light" | "dark";
 
-/**
- * The page defaults to the visitor's system preference. This toggle exists
- * because the brand reads differently in each mode, and someone looking at
- * their garden at dusk should not be handed a bright page.
- *
- * The active theme is not React state: it lives on the document element, set
- * before first paint by the inline script in the root layout. This subscribes
- * to it, so the toggle can never disagree with what is actually rendered.
- */
 function subscribe(onChange: () => void) {
   const query = window.matchMedia("(prefers-color-scheme: dark)");
   query.addEventListener("change", onChange);

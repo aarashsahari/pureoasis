@@ -5,12 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { services } from "@/lib/services";
 
-/**
- * Bento grid, five cells for five services. Three cells carry photography and
- * two carry tone, so the grid does not read as a row of identical text cards.
- * Every cell is a link into the service page it describes.
- */
-
 const media = {
   design: { height: "h-[260px] lg:h-[300px]", sizes: "(min-width: 1024px) 58vw, 100vw" },
   stone: { height: "h-[260px] lg:h-[300px]", sizes: "(min-width: 1024px) 40vw, 100vw" },

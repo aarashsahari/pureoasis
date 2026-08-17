@@ -1,12 +1,3 @@
-/**
- * Every visible string that is not part of the services, projects, posts or
- * areas data lives here.
- *
- * IMPORTANT before launch: the values in `business`, `claims`, `stats` and
- * `testimonials` are placeholders. The phone number, address, founding year,
- * insurance status and every number below must be replaced with real details,
- * and every claim must be one the business can actually stand behind.
- */
 
 export const SITE_URL = "https://pureoasis.ca";
 

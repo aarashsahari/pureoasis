@@ -1,11 +1,3 @@
-/**
- * Route loading skeleton.
- *
- * Shown only when a navigation has to wait on the server, which on this site
- * is rare because every page is prerendered. It exists so a cold or slow
- * connection sees the shape of the page arriving rather than a blank frame.
- * The proportions match the page header every inner route opens with.
- */
 export default function Loading() {
   return (
     <div className="border-b border-line bg-surface" aria-busy role="status">

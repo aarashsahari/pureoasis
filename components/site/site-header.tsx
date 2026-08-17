@@ -11,15 +11,6 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { business, nav } from "@/lib/content";
 import { services } from "@/lib/services";
 
-/**
- * Sticky header, 64px on mobile and 72px at desktop, always one line.
- *
- * Motion: the bar picks up a background and a hairline once the page has
- * started to move. That is a state transition, not decoration, and it is the
- * only thing on the header that animates on scroll. The threshold is read from
- * a motion value, so React re-renders twice over a whole page rather than once
- * per frame.
- */
 export function SiteHeader() {
   const { scrollY } = useScroll();
   const pathname = usePathname();
@@ -27,11 +18,6 @@ export function SiteHeader() {
   const servicesRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
-  /*
-    Each panel stores the route it was opened on rather than a boolean. A
-    completed navigation changes the pathname, which closes the panel that
-    triggered it without an effect reaching back in to reset state.
-  */
   const [menuPath, setMenuPath] = useState<string | null>(null);
   const [servicesPath, setServicesPath] = useState<string | null>(null);
   const [mobileServicesPath, setMobileServicesPath] = useState<string | null>(null);
@@ -157,12 +143,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/*
-            Responsive display lives on wrappers, never as a `hidden` utility on
-            the component itself: the buttons already carry `inline-flex`, and
-            two display utilities on one element resolve by stylesheet order
-            rather than by the one written last.
-          */}
+          {/* hidden goes on the wrapper: these already carry inline-flex */}
           <div className="hidden xl:block">
             <a
               href={business.phoneHref}

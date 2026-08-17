@@ -5,11 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { projects } from "@/lib/projects";
 
-/**
- * One project, shown properly. A wide establishing frame carries the whole
- * yard, then the detail frame and the write up explain what was actually
- * solved, which is what a homeowner comparing quotes is reading for.
- */
 export function FeaturedProject() {
   const project = projects[0];
 

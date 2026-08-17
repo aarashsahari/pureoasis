@@ -1,15 +1,6 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
-/**
- * Buttons and button-shaped links.
- *
- * Contrast: `solid` puts --accent-ink on --accent (6.6:1 light, 9.0:1 dark).
- * `outline` puts --ink on the page background (15:1 both modes). Neither
- * variant is ever placed over a photograph without a scrim behind it.
- * Radius follows the single page token, --radius-edge.
- */
-
 type Variant = "solid" | "outline";
 
 const base =
@@ -24,11 +15,6 @@ const variants: Record<Variant, string> = {
 
 type ButtonLinkProps = ComponentProps<typeof Link> & { variant?: Variant; children: ReactNode };
 
-/**
- * Internal routes go through next/link so navigation stays client side and the
- * destination is prefetched. Protocol links (tel:, mailto:) fall back to a
- * plain anchor, which is what Link would produce anyway minus the routing.
- */
 export function ButtonLink({ variant = "solid", className = "", children, href, ...props }: ButtonLinkProps) {
   const classes = `${base} ${variants[variant]} ${className}`;
   const target = typeof href === "string" ? href : href.pathname ?? "";

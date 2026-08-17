@@ -20,11 +20,6 @@ export type Project = {
   metaDescription: string;
 };
 
-/**
- * TODO(client): the photographs behind these are real Pure Oasis work. The
- * surrounding detail is not: confirm or correct every location, date, build
- * duration and description before this is published.
- */
 export const projects: readonly Project[] = [
   {
     slug: "side-yard-transformation",

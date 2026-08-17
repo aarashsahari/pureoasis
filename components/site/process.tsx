@@ -1,11 +1,6 @@
 import { Reveal } from "@/components/ui/reveal";
 import { process } from "@/lib/content";
 
-/**
- * Four stages of a build. Scroll snapped on small screens so each stage gets
- * the full width, four columns from lg up. Each column is topped with a rule
- * that organises the copy underneath it rather than decorating the section.
- */
 export function Process() {
   return (
     <section id="process" className="border-b border-line bg-surface">

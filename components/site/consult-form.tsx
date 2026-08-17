@@ -7,15 +7,6 @@ import { ArrowRight, CheckCircle, WarningCircle } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { business, consult } from "@/lib/content";
 
-/**
- * Consult request form.
- *
- * Labels sit above their input, hints and errors below. Every field that can
- * fail says so inline. The form carries four states: idle, submitting, sent
- * and failed, and the failed state keeps the visitor's answers so nothing has
- * to be retyped.
- */
-
 type Status = "idle" | "submitting" | "sent" | "failed";
 type Errors = Partial<Record<FieldName, string>>;
 

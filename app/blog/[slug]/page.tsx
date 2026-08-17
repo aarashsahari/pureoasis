@@ -81,11 +81,7 @@ export default async function PostPage({ params }: Params) {
           <div className="mt-14 lg:mt-20">
             {post.body.map((block, i) => (
               <Reveal key={block.heading ?? `block-${i}`} index={0}>
-                {/*
-                  Spacing between blocks is set here rather than with a `first:`
-                  variant on the heading: each block renders inside its own
-                  wrapper, so every heading would qualify as a first child.
-                */}
+                {/* spacing lives here, not a first: variant: each block is its own wrapper */}
                 <div className={`mx-auto max-w-[68ch] ${i === 0 ? "" : "mt-14"}`}>
                   {block.heading ? (
                     <h2 className="display text-[1.6rem] lg:text-[2rem]">{block.heading}</h2>

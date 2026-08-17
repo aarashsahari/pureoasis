@@ -4,16 +4,6 @@ import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { nav, pricing } from "@/lib/content";
 
-/**
- * Two price groups, because the business sells two different things: builds
- * priced by the job, and maintenance priced by the season. Publishing both is
- * the point. Most enquiries in this market stall because nobody will name a
- * number first.
- *
- * The tiers are deliberately unequal in width so neither row reads as a
- * generic three card feature strip. The middle tier is the one most properties
- * land in, and it is the widest.
- */
 const spans = ["lg:col-span-4", "lg:col-span-5", "lg:col-span-3"];
 
 type Tier = {

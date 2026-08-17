@@ -3,12 +3,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 
-/**
- * Scroll reveal. Motivation: content enters in the order it should be read,
- * which gives each section a beginning rather than arriving all at once.
- * Collapses to a plain static render under prefers-reduced-motion.
- */
-
 type RevealProps = {
   children: ReactNode;
   /** Stagger position within a group of siblings. */
@@ -37,10 +31,6 @@ export function Reveal({ children, index = 0, className, as = "div" }: RevealPro
   );
 }
 
-/**
- * Hero entry. Motivation: establishes reading hierarchy on load, headline
- * before supporting copy before the call to action.
- */
 export function HeroEnter({ children, index = 0, className }: RevealProps) {
   const reduce = useReducedMotion();
 

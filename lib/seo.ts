@@ -4,14 +4,6 @@ import { areas } from "@/lib/areas";
 import { SITE_URL, business } from "@/lib/content";
 import { services } from "@/lib/services";
 
-/**
- * Metadata and structured data helpers.
- *
- * Every page declares its own title, description and canonical through
- * `pageMetadata`. Structured data is built from the same data the page
- * renders, so the two cannot drift apart.
- */
-
 const DEFAULT_OG = "/images/hero-terrace.jpg";
 
 export function pageMetadata({

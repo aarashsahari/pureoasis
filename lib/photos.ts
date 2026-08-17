@@ -1,18 +1,6 @@
-/**
- * Photo manifest.
- *
- * Every image on the site is declared here once, with the size the layout
- * reserves for it and the alt text screen readers get. Components reference a
- * slot by name and never touch a file path.
- *
- * The files in /public/images are generated demo artwork, drawn in the site
- * palette by `npm run photos`. The alt text below describes that artwork
- * honestly rather than describing a photograph that is not there.
- *
- * To use a real photograph instead, save it over the file at the same path at
- * the same dimensions, and rewrite that slot's alt text to describe it.
- */
 
+// Demo artwork, drawn by `npm run photos`. To use a real photo, save it over
+// the same path at the same size and rewrite the alt text.
 export type PhotoSlot = {
   /** Path under /public, including the leading slash. */
   src: string;

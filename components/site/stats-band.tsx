@@ -1,10 +1,6 @@
 import { Reveal } from "@/components/ui/reveal";
 import { stats } from "@/lib/content";
 
-/**
- * Four numbers, separated by rules rather than boxed into cards. Kept to one
- * band because the point is the comparison between them, not each on its own.
- */
 export function StatsBand() {
   return (
     <section aria-label="The practice in numbers" className="border-b border-line bg-surface-2">

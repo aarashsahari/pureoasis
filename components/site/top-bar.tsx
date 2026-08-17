@@ -8,12 +8,6 @@ const logos = {
   LinkedIn: LinkedinLogo,
 } as const;
 
-/**
- * Utility bar. For a local trade business the address and the inbox are the
- * two things people look for first, so they get a line of their own above the
- * navigation instead of being buried in the footer. Hidden below lg, where the
- * same details live in the mobile menu and the footer.
- */
 export function TopBar() {
   return (
     <div className="hidden border-b border-line bg-surface lg:block">

@@ -5,10 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { business, closing } from "@/lib/content";
 
-/**
- * Closing band. Three frames stepped against a single argument about timing,
- * which is the one thing that actually moves a landscape enquiry forward.
- */
 export function ClosingBand() {
   return (
     <section aria-label="Get a quote" className="border-b border-line bg-surface">

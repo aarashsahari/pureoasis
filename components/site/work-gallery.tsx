@@ -2,14 +2,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import type { PhotoKey } from "@/lib/photos";
 
-/**
- * Gallery of work, on the projects page rather than a route of its own.
- *
- * For a landscaping business the gallery and the project list are the same
- * thing in a visitor's head, so splitting them across two pages would just
- * make people choose between identical options. Sizes are mixed so the grid
- * has rhythm rather than reading as a contact sheet.
- */
 const gallery: { slot: PhotoKey; span: string; height: string }[] = [
   { slot: "patioSlabs", span: "lg:col-span-5", height: "h-[280px] lg:h-[340px]" },
   { slot: "frontLawnStriped", span: "lg:col-span-4", height: "h-[280px] lg:h-[340px]" },

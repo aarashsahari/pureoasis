@@ -5,10 +5,6 @@ import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { business } from "@/lib/content";
 
-/**
- * The enquiry section. The heading lives on the page above it, so this is the
- * form, the direct contact details and the opening hours only.
- */
 export function Consult() {
   return (
     <section id="consult" className="border-b border-line">

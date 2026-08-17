@@ -8,16 +8,6 @@ import { Phone } from "@phosphor-icons/react";
 
 import { business, nav } from "@/lib/content";
 
-/**
- * Persistent call bar, phones only.
- *
- * Most enquiries to a trade business start as a phone call from a phone, and
- * the header CTA is hidden at this width to keep the bar on one line. This
- * puts both actions permanently within thumb reach instead.
- *
- * It appears once the hero is behind you, so it never covers the first screen,
- * and it is hidden on the contact page where the form is already the point.
- */
 export function MobileCallBar() {
   const pathname = usePathname();
   const { scrollY } = useScroll();

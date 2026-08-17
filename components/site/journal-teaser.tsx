@@ -5,11 +5,6 @@ import { PostCard } from "@/components/site/post-card";
 import { Reveal } from "@/components/ui/reveal";
 import { posts } from "@/lib/posts";
 
-/**
- * Three posts at three widths. The lead post gets the room because it is the
- * one worth reading first, and the descending sizes keep this from reading as
- * a row of identical cards.
- */
 const spans = ["lg:col-span-5", "lg:col-span-4", "lg:col-span-3"];
 
 export function JournalTeaser() {
