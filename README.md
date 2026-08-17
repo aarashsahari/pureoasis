@@ -13,8 +13,7 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build
 npm run lint
-npm run photos        # regenerate the photography brief from the manifest
-npm run photos:fetch  # fill empty photo slots with licensed stock stand-ins
+npm run photos   # draw the demo artwork for any photo slot missing a file
 ```
 
 ## Before this goes live
@@ -27,20 +26,18 @@ Three things are placeholders, all flagged with `TODO(client)` in the source.
    they are invented. Replace them, and drop any claim the business cannot
    stand behind. The three projects in `lib/projects.ts` and the three posts in
    `lib/posts.ts` are the same: plausible, not real.
-2. **Photography.** 28 slots, listed with sizes and art direction in
-   `public/images/README.md`. To fill every empty one with a licensed stock
-   stand-in in a single pass:
+2. **Imagery.** Every slot is filled with generated demo artwork drawn in the
+   site palette by `npm run photos`. It is deliberately abstract: paving grids
+   for hardscape, mown bands for lawn care, contour lines for design, ripples
+   for irrigation, leaf forms for planting, layered horizons for the wide
+   frames. Nobody should mistake it for photographs of jobs.
 
-   ```bash
-   npm run photos:fetch
-   ```
+   To use a real photograph, save it over the file at the same path in
+   `public/images` at the same dimensions, and rewrite that slot's alt text in
+   `lib/photos.ts` to describe it. `npm run photos` leaves existing files alone
+   and only regenerates what is missing, so your photographs are safe; pass
+   `--force` to redraw everything.
 
-   Pulls from Openverse, filtered to CC0 and public domain images cleared for
-   commercial use, crops each to the exact size the slot declares, and writes
-   blur placeholders plus `public/images/CREDITS.md`. It never overwrites a
-   file that already exists, so your own photography always wins: drop a real
-   photo in under the same filename and it takes over. Pass `--force` to
-   replace stand-ins, `--only=slotA,slotB` to redo specific ones.
 3. **Where enquiries go.** `app/api/consult/route.ts` validates the consult
    form and logs it. Point it at an inbox or a CRM and add spam protection.
 
@@ -108,12 +105,11 @@ page beneath it changes.
   sequence or feedback, and each is documented at its call site. Everything
   collapses under `prefers-reduced-motion`, enforced in CSS rather than in
   component logic so it holds even before hydration.
-- **Photography is a first class slot.** `components/ui/photo.tsx` checks at
-  render whether a manifest file exists and falls back to a reservation block
-  of identical aspect ratio, labelled through container queries so a 96px
-  thumbnail and a full bleed hero each show the right amount of detail. When a
-  blur seed exists for a slot, the image fades up from a blur instead of
-  popping in.
+- **Images are a manifest, not file paths.** Components reference a slot by
+  name; `lib/photos.ts` owns the path, the dimensions the layout reserves and
+  the alt text. Swapping artwork for a real photograph touches one file and no
+  component. Images fade up from a blur of themselves, generated alongside
+  them.
 - **The phone is the conversion path.** On phones a call bar appears once the
   hero has scrolled away, carrying the number and the quote link. It stays out
   of the first screen, is inert to the keyboard while hidden, and never shows

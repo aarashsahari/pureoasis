@@ -1,16 +1,16 @@
 /**
  * Photo manifest.
  *
- * Every photographic slot on the site is declared here once. The `<Photo>`
- * component checks at render time whether the file exists in /public and
- * either renders the real photograph or a labelled reservation block of the
- * exact same aspect ratio, so nothing shifts when the real files land.
+ * Every image on the site is declared here once, with the size the layout
+ * reserves for it and the alt text screen readers get. Components reference a
+ * slot by name and never touch a file path.
  *
- * `have: true` marks a slot where Pure Oasis already has the photograph and it
- * only needs exporting to the filename below. Everything else still needs
- * shooting or sourcing.
+ * The files in /public/images are generated demo artwork, drawn in the site
+ * palette by `npm run photos`. The alt text below describes that artwork
+ * honestly rather than describing a photograph that is not there.
  *
- * Run `npm run photos` to regenerate `public/images/README.md` from this file.
+ * To use a real photograph instead, save it over the file at the same path at
+ * the same dimensions, and rewrite that slot's alt text to describe it.
  */
 
 export type PhotoSlot = {
@@ -20,278 +20,183 @@ export type PhotoSlot = {
   alt: string;
   width: number;
   height: number;
-  /** Art direction, or the crop instruction for a photograph that exists. */
-  brief: string;
-  /** True when the photograph exists and only needs exporting. */
-  have?: boolean;
-  /**
-   * Search terms used by `npm run photos:fetch` to pull a licensed stock
-   * stand-in for this slot. Stand-ins are placeholders with a picture on
-   * them, not the finished site. Replace them with real job photography.
-   */
-  stockQuery?: string;
 };
 
 export const photos = {
-  // ---------------------------------------------------------------------
-  // Photographs Pure Oasis already has.
-  // ---------------------------------------------------------------------
   patioSlabs: {
     src: "/images/patio-slabs.jpg",
-    alt: "Large format concrete slabs set with black stone joints, meeting a strip of fresh sod along a cedar fence.",
+    alt: "Abstract artwork of paving slabs set in a grid, drawn in the Pure Oasis palette.",
     width: 1600,
     height: 1200,
-    brief:
-      "The slab patio with black stone joints and new sod against the cedar fence. Export at 1600px on the long edge, no crop needed.",
-    stockQuery: "concrete paver patio backyard",
-    have: true,
   },
   patioSlabsPortrait: {
     src: "/images/patio-slabs-portrait.jpg",
-    alt: "A slab patio with black stone joints running back towards a cedar fence.",
+    alt: "Abstract artwork of paving slabs receding in perspective.",
     width: 1400,
     height: 1750,
-    brief:
-      "Same slab patio photograph, cropped to a 4:5 portrait for the home page hero. Keep the run of slabs and the sod edge in frame, crop from the sides.",
-    stockQuery: "stone patio garden path",
-    have: true,
   },
   frontEntryStone: {
     src: "/images/front-entry-stone.jpg",
-    alt: "A stamped concrete walkway with a black river rock inlay running beside a mulched bed of hostas and young shrubs.",
+    alt: "Abstract artwork of a paved entry laid out in a grid.",
     width: 1600,
     height: 1200,
-    brief:
-      "The overhead of the stamped concrete entry with the black river rock inlay and the mulched bed. Export as shot.",
-    stockQuery: "front garden walkway house",
-    have: true,
   },
   frontLawnStriped: {
     src: "/images/front-lawn-striped.jpg",
-    alt: "A freshly cut front lawn with mower stripes, edged mulch beds of hostas and flowering shrubs, and a stamped concrete walkway.",
+    alt: "Abstract artwork of mown bands running across a lawn.",
     width: 1600,
     height: 1200,
-    brief: "The striped front lawn with the mulched beds and the walkway. Export as shot.",
-    stockQuery: "mowed lawn stripes house front yard",
-    have: true,
   },
   sideYardBefore: {
     src: "/images/side-yard-before.jpg",
-    alt: "A narrow side yard before work, with patchy grass, timber raised beds and loose gravel against the fence.",
+    alt: "Abstract artwork of scattered overgrown foliage.",
     width: 1600,
     height: 1200,
-    brief:
-      "Before frame of the side yard. Keep it exactly as shot, including the raised beds and the bare patches. Do not colour correct it to look better than it was.",
-    stockQuery: "overgrown backyard weeds fence",
-    have: true,
   },
   sideYardAfter: {
     src: "/images/side-yard-after.jpg",
-    alt: "The same side yard after work, with square stepping stones set in black stone and new sod laid up to the garage.",
+    alt: "Abstract artwork of laid paving in a clean grid.",
     width: 1600,
     height: 1200,
-    brief:
-      "After frame of the side yard, shot from the matching end so the pair reads as the same place.",
-    stockQuery: "stepping stone path lawn garden",
-    have: true,
   },
-
-  // ---------------------------------------------------------------------
-  // Still needed.
-  // ---------------------------------------------------------------------
   serviceDesign: {
     src: "/images/service-design.jpg",
-    alt: "A landscape plan on a work table beside stone and mulch samples.",
+    alt: "Abstract artwork of topographic contour lines.",
     width: 1200,
     height: 900,
-    brief:
-      "Design service. Overhead of a plan with material samples. Warm task light, tight crop, no branded product labels.",
-    stockQuery: "landscape garden plan drawing",
   },
   serviceHardscape: {
     src: "/images/service-hardscape.jpg",
-    alt: "A crew setting a slab onto a compacted base.",
+    alt: "Abstract artwork of paving slabs and open joints.",
     width: 1200,
     height: 900,
-    brief:
-      "Hardscape service. Hands and a slab or stone in motion, granular base visible. Take this on any build day, it is the most valuable photo on the site.",
-    stockQuery: "paving stone installation construction",
   },
   serviceLawn: {
     src: "/images/service-lawn.jpg",
-    alt: "A mower part way across a lawn, leaving a cut stripe behind it.",
+    alt: "Abstract artwork of cut stripes across turf.",
     width: 1200,
     height: 900,
-    brief:
-      "Lawn care service. Mid cut, stripe visible behind the machine. Shoot low so the stripe reads.",
-    stockQuery: "lawn mower cutting grass",
   },
   serviceIrrigation: {
     src: "/images/service-irrigation.jpg",
-    alt: "A pop up irrigation head running at the edge of a bed.",
+    alt: "Abstract artwork of concentric ripples spreading through water.",
     width: 1200,
     height: 900,
-    brief:
-      "Irrigation service. A head running, water visible, shot low against planting. Early morning light works best.",
-    stockQuery: "garden sprinkler watering lawn",
   },
   serviceGarden: {
     src: "/images/service-garden.jpg",
-    alt: "A freshly cut bed edge between black mulch and lawn.",
+    alt: "Abstract artwork of layered leaf forms.",
     width: 1200,
     height: 900,
-    brief:
-      "Garden maintenance service. Tight crop on a cut bed edge where mulch meets turf. This one detail sells the service.",
-    stockQuery: "garden mulch flower bed",
   },
 
   backyardCover: {
     src: "/images/project-backyard.jpg",
-    alt: "A rebuilt rear yard with a slab patio and new sod behind a cedar fence.",
+    alt: "Abstract artwork of layered ground stepping back in bands.",
     width: 2400,
     height: 1080,
-    brief:
-      "Rear yard project, wide establishing shot from the house. If the slab patio job has a wider frame, use it here.",
-    stockQuery: "landscaped backyard garden lawn",
   },
   frontEntryCover: {
     src: "/images/project-front-entry.jpg",
-    alt: "A front entry with a stamped concrete walkway, stone inlay and planted beds.",
+    alt: "Abstract artwork of layered ground in horizontal bands.",
     width: 2400,
     height: 1080,
-    brief: "Front entry project, wide establishing shot from the street or driveway.",
-    stockQuery: "house front yard landscaping",
   },
   sideYardDetail: {
     src: "/images/side-yard-detail.jpg",
-    alt: "A stepping stone set into black stone beside new sod.",
+    alt: "Abstract artwork of a paving joint in close detail.",
     width: 1200,
     height: 900,
-    brief: "Side yard project detail. Close crop where the stepping stone meets the stone and the sod edge.",
-    stockQuery: "stepping stone gravel path detail",
   },
   backyardDetail: {
     src: "/images/project-backyard-detail.jpg",
-    alt: "The joint line where a slab meets black stone and the sod edge.",
+    alt: "Abstract artwork of paving edges meeting.",
     width: 1200,
     height: 900,
-    brief: "Rear yard project detail. Tight crop on a joint or the sod edge. Proves the workmanship.",
-    stockQuery: "paving stone edge grass detail",
   },
   frontEntryDetail: {
     src: "/images/project-front-entry-detail.jpg",
-    alt: "An inground light set flush into the stamped concrete beside the stone inlay.",
+    alt: "Abstract artwork of ripples radiating from a point.",
     width: 1200,
     height: 900,
-    brief: "Front entry project detail. The inground light and the inlay edge, shot square on.",
-    stockQuery: "garden path light fixture",
   },
 
   aboutLead: {
     src: "/images/about-crew.jpg",
-    alt: "Two of the crew setting out string lines across a stripped yard.",
+    alt: "Abstract artwork of layered terrain.",
     width: 1600,
     height: 1200,
-    brief: "About lead. The crew at the setting out stage. Documentary, not posed.",
-    stockQuery: "landscaping worker garden work",
   },
   aboutDetail: {
     src: "/images/about-detail.jpg",
-    alt: "A hand checking the level of a freshly laid slab against a string line.",
+    alt: "Abstract artwork of overlapping leaves.",
     width: 900,
     height: 1200,
-    brief: "About detail. Portrait crop of a level or a string line being checked. Close and tactile.",
-    stockQuery: "hands gardening tools soil",
   },
   aboutYard: {
     src: "/images/about-yard.jpg",
-    alt: "Pallets of slabs and bagged stone stacked on a truck at the start of a job.",
+    alt: "Abstract artwork of stacked rectangular forms.",
     width: 1200,
     height: 900,
-    brief: "About supporting frame. Materials on the truck or at the yard, early morning.",
-    stockQuery: "wheelbarrow garden soil materials",
   },
 
   teamLead: {
     src: "/images/team-lead.jpg",
-    alt: "The owner of Pure Oasis on site.",
+    alt: "Abstract soft-focus artwork in the Pure Oasis palette.",
     width: 900,
     height: 1100,
-    brief: "Team portrait. Natural light, plain background, shoulders up, no crossed arms.",
-    stockQuery: "portrait gardener outdoors",
   },
   teamBuild: {
     src: "/images/team-build.jpg",
-    alt: "The crew lead on a build in progress.",
+    alt: "Abstract soft-focus artwork in the Pure Oasis palette.",
     width: 900,
     height: 1100,
-    brief: "Team portrait, matched to the other. Shot on site rather than in studio.",
-    stockQuery: "portrait worker outdoors",
   },
 
   postFreezeThaw: {
     src: "/images/post-freeze-thaw.jpg",
-    alt: "Frost heave lifting the corner of an older paver patio.",
+    alt: "Abstract artwork of paving slabs and joint lines.",
     width: 1200,
     height: 800,
-    brief: "Journal cover. Evidence of frost heave on a tired patio. Honest, slightly grim, well lit.",
-    stockQuery: "cracked paving stones frost",
   },
   postLawn: {
     src: "/images/post-lawn.jpg",
-    alt: "A core aerator plug lying on a cut lawn.",
+    alt: "Abstract artwork of mown bands across grass.",
     width: 1200,
     height: 800,
-    brief: "Journal cover. Aeration plugs on turf, shot close. Shows the soil profile.",
-    stockQuery: "lawn grass soil close up",
   },
   postBudget: {
     src: "/images/post-budget.jpg",
-    alt: "A marked up landscape plan with a measuring tape resting across it.",
+    alt: "Abstract artwork of contour lines, suggesting a site plan.",
     width: 1200,
     height: 800,
-    brief: "Journal cover. A plan with annotations and a tape. Planning and cost without showing money.",
-    stockQuery: "blueprint plan tape measure",
   },
 
   ctaLead: {
     src: "/images/cta-lead.jpg",
-    alt: "An evening view across a finished patio towards a lit house.",
+    alt: "Abstract artwork of layered ground at dusk.",
     width: 1200,
     height: 900,
-    brief: "Closing band, main frame. Evening, looking back at the house from the garden.",
-    stockQuery: "garden patio evening lights",
   },
   ctaSecond: {
     src: "/images/cta-second.jpg",
-    alt: "A stepping stone path running through planting.",
+    alt: "Abstract artwork of leaf forms clustered together.",
     width: 800,
     height: 1000,
-    brief: "Closing band, second frame. Portrait, a path or level change through planting.",
-    stockQuery: "garden steps path plants",
   },
   ctaThird: {
     src: "/images/cta-third.jpg",
-    alt: "An inground light washing a planted bed after dark.",
+    alt: "Abstract artwork of concentric rings.",
     width: 800,
     height: 800,
-    brief: "Closing band, third frame. Square, a single warm focal point after dark.",
-    stockQuery: "fire pit patio evening",
   },
 
   contactSide: {
     src: "/images/consult.jpg",
-    alt: "A walkthrough at the start of a job, with a tape measure and a site sketch.",
+    alt: "Abstract soft-focus artwork in the Pure Oasis palette.",
     width: 1200,
     height: 1500,
-    brief: "Consult section. Portrait crop of the first site visit. Candid, sketchbook or tape in frame.",
-    stockQuery: "people talking garden consultation",
   },
 } satisfies Record<string, PhotoSlot>;
 
 export type PhotoKey = keyof typeof photos;
-
-/** Slots the business already has a photograph for. */
-export const suppliedPhotos = (Object.keys(photos) as PhotoKey[]).filter(
-  (key) => "have" in photos[key] && photos[key].have
-);
